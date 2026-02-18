@@ -1,18 +1,20 @@
 package org.spearedrice.asianmod;
 
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.spearedrice.asianmod.block.ModBlocks;
+import org.spearedrice.asianmod.item.ModItems;
 
-
-// important ahh comment (no it's not)
 public class AsianMod implements ModInitializer {
 	public static final String MOD_ID = "asianmod";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// die
+		LOGGER.info("Initializing " + MOD_ID);
+		// item
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 	}
 }
