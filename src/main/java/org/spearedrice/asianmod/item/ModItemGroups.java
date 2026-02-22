@@ -12,9 +12,8 @@ import org.spearedrice.asianmod.block.ModBlocks;
 
 public class ModItemGroups {
 
-    // Item group for Nephrite Jade items
     public static final ItemGroup NEPHRITE_JADE_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(AsianMod.MOD_ID, "nephrite_jade_items"),
+            Identifier.of(AsianMod.MOD_ID, "nephrite_jade_items"),
             FabricItemGroup.builder()
                     .icon(() -> new ItemStack(ModItems.NEPHRITE_JADE))
                     .displayName(Text.translatable("itemgroup.asianmod.nephrite_jade_items"))
@@ -24,15 +23,14 @@ public class ModItemGroups {
                     }).build()
     );
 
-    // Item group for Nephrite Jade blocks
     public static final ItemGroup NEPHRITE_JADE_BLOCKS_GROUP = Registry.register(Registries.ITEM_GROUP,
-            new Identifier(AsianMod.MOD_ID, "nephrite_jade_blocks"),
+            Identifier.of(AsianMod.MOD_ID, "nephrite_jade_blocks"),
             FabricItemGroup.builder()
-                    .icon(() -> new ItemStack(ModBlocks.NEPHRITE_JADE_BLOCK))
+                    .icon(() -> new ItemStack(ModBlocks.NEPHRITE_JADE_BLOCK.asItem()))
                     .displayName(Text.translatable("itemgroup.asianmod.nephrite_jade_blocks"))
                     .entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.NEPHRITE_JADE_BLOCK);
-                        entries.add(ModBlocks.RAW_NEPHRITE_JADE_BLOCK);
+                        entries.add(ModBlocks.NEPHRITE_JADE_BLOCK.asItem());
+                        entries.add(ModBlocks.RAW_NEPHRITE_JADE_BLOCK.asItem());
                     }).build()
     );
 
