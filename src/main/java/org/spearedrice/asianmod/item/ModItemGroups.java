@@ -9,6 +9,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import org.spearedrice.asianmod.AsianMod;
 import org.spearedrice.asianmod.block.ModBlocks;
+import org.spearedrice.asianmod.item.ModItems;
 
 public class ModItemGroups {
 
@@ -20,6 +21,9 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModItems.NEPHRITE_JADE);
                         entries.add(ModItems.RAW_NEPHRITE_JADE);
+
+                        // add the chisel
+                        entries.add(ModItems.CHISEL);
                     }).build()
     );
 
@@ -31,6 +35,9 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(ModBlocks.NEPHRITE_JADE_BLOCK.asItem());
                         entries.add(ModBlocks.RAW_NEPHRITE_JADE_BLOCK.asItem());
+                        entries.add(ModBlocks.NEPHRITE_JADE_ORE.asItem());
+                        entries.add(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE.asItem());
+                        entries.add(ModBlocks.ASIAN_BLOCK.asItem());
                     }).build()
     );
 
