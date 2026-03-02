@@ -19,6 +19,14 @@ public class ModItems {
     public static final Item RAW_NEPHRITE_JADE = register("raw_nephrite_jade", Item::new);
     public static final Item CHISEL = register("chisel", settings -> new ChiselItem(settings.maxDamage(32)));
 
+    public static final Item BOK_CHOY = register("bok_choy",
+            settings -> new Item(settings
+                    .food(ModFoodComponents.BOK_CHOY, ModFoodComponents.BOK_CHOY_CONSUMABLE)
+            ));
+
+    public static final Item COW_DUNG = register("cow_dung",
+            settings -> new Item(settings));
+
     private static <T extends Item> T register(String name, Function<Item.Settings, T> factory) {
         Identifier id = Identifier.of(AsianMod.MOD_ID, name);
         RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, id);

@@ -24,6 +24,8 @@ public class ModItemGroups {
 
                         // add the chisel
                         entries.add(ModItems.CHISEL);
+                        entries.add(ModItems.BOK_CHOY);
+
                     }).build()
     );
 
