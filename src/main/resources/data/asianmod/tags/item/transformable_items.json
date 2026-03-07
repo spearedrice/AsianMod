@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:apple",
+    "minecraft:coal",
+    "minecraft:stick",
+    "asianmod:nephrite_jade",
+    "asianmod:raw_nephrite_jade"
+  ]
+}

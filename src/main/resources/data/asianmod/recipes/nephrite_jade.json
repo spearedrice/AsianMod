@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
+  "category": "building_blocks",
   "ingredients": [
     {
       "item": "asianmod:nephrite_jade_block"
     }
   ],
   "result": {
-    "item": "asianmod:nephrite_jade",
+    "id": "asianmod:nephrite_jade",
     "count": 9
   }
 }
