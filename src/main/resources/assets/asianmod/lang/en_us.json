@@ -1,5 +1,11 @@
+
 {
   "item.asianmod.nephrite_jade": "Nephrite Jade",
-  "item.asianmod.raw_nephrite_jade": "Raw Nephrite Jade"
+  "item.asianmod.raw_nephrite_jade": "Raw Nephrite Jade",
 
+  "block.asianmod.nephrite_jade_block": "Block of Nephrite Jade",
+  "block.asianmod.raw_nephrite_jade_block": "Block of Raw Nephrite Jade",
+
+  "itemgroup.asianmod.nephrite_jade_items": "Pink Garnet Items",
+  "itemgroup.asianmod.nephrite_jade_blocks": "Pink Garnet Blocks"
 }

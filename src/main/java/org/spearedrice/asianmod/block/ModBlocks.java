@@ -29,6 +29,17 @@ public class ModBlocks {
             )
     );
 
+    public static final Block RAW_NEPHRITE_JADE_BLOCK = registerBlock(
+            "raw_nephrite_jade_block",
+            new Block(AbstractBlock.Settings.create()
+                    .registryKey(RegistryKey.of(
+                            RegistryKeys.BLOCK,
+                            Identifier.of(AsianMod.MOD_ID, "raw_nephrite_jade_block")
+                    ))
+                    .strength(3f)
+                    .requiresTool()
+            )
+    );
     private static Block registerBlock(String name, Block block) {
         Identifier id = Identifier.of(AsianMod.MOD_ID, name);
 
@@ -55,6 +66,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
             entries.add(NEPHRITE_JADE_BLOCK);
+            entries.add(RAW_NEPHRITE_JADE_BLOCK);
         });
     }
 }

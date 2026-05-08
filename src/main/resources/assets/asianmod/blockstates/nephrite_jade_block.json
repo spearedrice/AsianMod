@@ -1,3 +1,7 @@
 {
-  "hi" : "jade"
+  "variants" : {
+    "": {
+      "model": "asianmod:block/nephrite_jade_blcok"
+    }
+  }
 }
