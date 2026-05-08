@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "asianmod",
+	"version": "${version}",
+	"name": "AsianMod",
+	"description": "mod that adds certain things to minecraft",
+	"authors": [
+		"spearedrice"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/spearedrice/AsianMod"
+	},
+	"license": "MIT",
+	"icon": "assets/asianmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.spearedrice.asianmod.AsianMod"
+		],
+		"fabric-datagen": [
+			"org.spearedrice.asianmod.AsianModDataGenerator"
+		],
+		"client" : [
+			"org.spearedrice.asianmod.AsianModClient"
+		]
+	},
+	"mixins": [
+		"asianmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
