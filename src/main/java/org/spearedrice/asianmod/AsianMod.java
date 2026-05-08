@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spearedrice.asianmod.block.ModBlocks;
+import org.spearedrice.asianmod.item.ModItemGroups;
 import org.spearedrice.asianmod.item.ModItems;
 
 public class AsianMod implements ModInitializer {
@@ -14,7 +15,9 @@ public class AsianMod implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Initializing " + MOD_ID);
 		// item
+		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
 	}
 }
