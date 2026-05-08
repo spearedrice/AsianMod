@@ -1,9 +1,9 @@
-
 {
   "item.asianmod.nephrite_jade": "Nephrite Jade",
   "item.asianmod.raw_nephrite_jade": "Raw Nephrite Jade",
   "item.asianmod.chisel": "Chisel",
   "item.asianmod.bok_choy": "Bok Choy",
+  "item.asianmod.cow_dung": "Cow Dung",
 
   "block.asianmod.nephrite_jade_block": "Block of Nephrite Jade",
   "block.asianmod.raw_nephrite_jade_block": "Block of Raw Nephrite Jade",
@@ -14,5 +14,15 @@
   "block.asianmod.asian_block": "Asian Block",
 
   "itemgroup.asianmod.nephrite_jade_items": "Nephrite Jade Items",
-  "itemgroup.asianmod.nephrite_jade_blocks": "Nephrite Jade Blocks"
+  "itemgroup.asianmod.nephrite_jade_blocks": "Nephrite Jade Blocks",
+
+  "tooltip.asianmod.raw_nephrite_jade": "§7Unrefined jade straight from the depths",
+  "tooltip.asianmod.raw_nephrite_jade_block": "§7Packed raw nephrite, really useless ",
+  "tooltip.asianmod.asian_block": "§7Mysterious block from the far east §f✦",
+  "tooltip.asianmod.bok_choy": "§7Really healthy meal.",
+  "tooltip.asianmod.chisel.normal": "§7Hold §eSHIFT §7for more info",
+  "tooltip.asianmod.chisel.shift": "§6Right-click blocks to do witchcraft",
+  "tooltip.asianmod.cow_dung": "§7Fuel with a distinctive aroma",
+  "tooltip.asianmod.nephrite_jade": "§7Polished jade of exceptional quality and sheen",
+  "tooltip.asianmod.nephrite_jade_block": "§7Elegant block of pure nephrite jade"
 }
