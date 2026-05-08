@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "asianmod",
 	"version": "${version}",
-	"name": "AsianMod",
+	"name": "Asian Mod",
 	"description": "mod that adds certain things to minecraft",
 	"authors": [
 		"spearedrice"
