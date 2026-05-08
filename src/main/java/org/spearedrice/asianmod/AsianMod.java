@@ -1,62 +1,58 @@
 package org.spearedrice.asianmod;
 
-import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
-import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.spearedrice.asianmod.block.ModBlocks;
-import org.spearedrice.asianmod.item.ModItemGroups;
-import org.spearedrice.asianmod.item.ModItems;
+
+import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.levelgen.GenerationStep;
+
+import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.item.v1.ComponentTooltipAppenderRegistry;
+import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
+
+import org.spearedrice.asianmod.component.ModComponents;
+import org.spearedrice.asianmod.worldgen.ModWorldPlacedFeatures;
 
 public class AsianMod implements ModInitializer {
+
 	public static final String MOD_ID = "asianmod";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static final SimpleParticleType SPARKLE_PARTICLE = FabricParticleTypes.simple();
+
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Initializing " + MOD_ID);
-		ModItemGroups.registerItemGroups();
-		ModItems.registerModItems();
-		ModBlocks.registerModBlocks();
 
-		FuelRegistryEvents.BUILD.register((builder, context) -> {
-			builder.add(ModItems.COW_DUNG, 600);
-		});
+		LOGGER.info("AsianMod initialized");
 
-		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, tooltipLines) -> {
-			if (itemStack.isOf(ModItems.RAW_NEPHRITE_JADE)) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.raw_nephrite_jade").formatted(Formatting.GRAY));
-			}
-			if (itemStack.isOf(ModBlocks.RAW_NEPHRITE_JADE_BLOCK.asItem())) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.raw_nephrite_jade_block").formatted(Formatting.GRAY));
-			}
-			if (itemStack.isOf(ModBlocks.ASIAN_BLOCK.asItem())) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.asian_block").formatted(Formatting.GRAY));
-			}
-			if (itemStack.isOf(ModItems.BOK_CHOY)) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.bok_choy").formatted(Formatting.GRAY));
-			}
-			if (itemStack.isOf(ModItems.CHISEL)) {
-				if (MinecraftClient.getInstance().options.sneakKey.isPressed()) {
-					tooltipLines.add(Text.translatable("tooltip.asianmod.chisel.shift").formatted(Formatting.YELLOW));
-				} else {
-					tooltipLines.add(Text.translatable("tooltip.asianmod.chisel.normal").formatted(Formatting.GRAY));
-				}
-			}
-			if (itemStack.isOf(ModItems.COW_DUNG)) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.cow_dung").formatted(Formatting.GRAY));
-			}
-			if (itemStack.isOf(ModItems.NEPHRITE_JADE)) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.nephrite_jade").formatted(Formatting.GRAY));
-			}
-			if (itemStack.isOf(ModBlocks.NEPHRITE_JADE_BLOCK.asItem())) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.nephrite_jade_block").formatted(Formatting.GRAY));
-			}
-		});
+		Registry.register(
+				BuiltInRegistries.PARTICLE_TYPE,
+				Identifier.fromNamespaceAndPath(MOD_ID, "sparkle_particle"),
+				SPARKLE_PARTICLE
+		);
+
+		BiomeModifications.addFeature(
+				BiomeSelectors.foundInOverworld(),
+				GenerationStep.Decoration.UNDERGROUND_ORES,
+				ModWorldPlacedFeatures.NEPHRITE_ORE_PLACED_KEY
+		);
+
+		BiomeModifications.addFeature(
+				BiomeSelectors.tag(BiomeTags.IS_FOREST),
+				GenerationStep.Decoration.VEGETAL_DECORATION,
+				ModWorldPlacedFeatures.NEPHRITE_TREE_PLACED_KEY
+		);
+
+		ComponentTooltipAppenderRegistry.addAfter(
+				DataComponents.DAMAGE,
+				ModComponents.COMPONENT_WITH_TOOLTIP
+		);
 	}
 }

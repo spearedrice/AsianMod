@@ -1,27 +1,61 @@
 {
-  "item.asianmod.nephrite_jade": "Nephrite Jade",
-  "item.asianmod.raw_nephrite_jade": "Raw Nephrite Jade",
-  "item.asianmod.chisel": "Chisel",
-  "item.asianmod.bok_choy": "Bok Choy",
-  "item.asianmod.cow_dung": "Cow Dung",
+  "block.AsianMod.rammed_earth": "Rammed Earth",
+  "block.AsianMod.compacted_timber": "Compacted Timber",
+  "block.AsianMod.abacus_block": "Abacus Block",
+  "block.AsianMod.brass_chest": "Brass Chest",
+  "block.AsianMod.bellows": "Bellows Block",
+  "block.AsianMod.clay_pipe_block": "Clay Pipe Block",
+  "block.AsianMod.oil_lamp": "Oil Lamp",
 
-  "block.asianmod.nephrite_jade_block": "Block of Nephrite Jade",
-  "block.asianmod.raw_nephrite_jade_block": "Block of Raw Nephrite Jade",
+  "block.AsianMod.porcelain_block": "Porcelain Block",
+  "block.AsianMod.porcelain_door": "Porcelain Door",
+  "block.AsianMod.porcelain_fence": "Porcelain Fence",
+  "block.AsianMod.porcelain_slab": "Porcelain Slab",
+  "block.AsianMod.porcelain_stairs": "Porcelain Stairs",
+  "block.AsianMod.porcelain_trapdoor": "Porcelain Trapdoor",
 
-  "block.asianmod.nephrite_jade_ore": "Nephrite Jade Ore",
-  "block.asianmod.nephrite_jade_deepslate_ore": "Nephrite Jade Deepslate Ore",
+  "block.AsianMod.vertical_bamboo_slab": "Vertical Bamboo Slab",
+  "block.AsianMod.lingzhi": "Lingzhi",
 
-  "block.asianmod.asian_block": "Asian Block",
+  "death.attack.rice_wine": "%1$s died from Rice Wine damage!",
+  "effect.AsianMod.rice_wine": "Rice Wine",
 
-  "itemgroup.asianmod.nephrite_jade_items": "Nephrite Jade Items",
-  "itemgroup.asianmod.nephrite_jade_blocks": "Nephrite Jade Blocks",
+  "enchantment.AsianMod.repulsion_curse": "Curse of Repulsion",
+  "enchantment.AsianMod.thundering": "Thundering",
 
-  "item.asianmod.raw_nephrite_jade.tooltip": "§7Unrefined jade straight from the depths",
-  "block.asianmod.raw_nephrite_jade_block.tooltip": "§7Packed raw nephrite, really useless",
-  "block.asianmod.asian_block.tooltip": "§7Mysterious block from the far east §f✦",
-  "item.asianmod.bok_choy.tooltip": "§7Really healthy meal.",
-  "item.asianmod.chisel.tooltip": "§7Hold §eSHIFT §7for more info",
-  "item.asianmod.cow_dung.tooltip": "§7Fuel with a distinctive aroma",
-  "item.asianmod.nephrite_jade.tooltip": "§7Polished jade of exceptional quality and sheen",
-  "block.asianmod.nephrite_jade_block.tooltip": "§7Elegant block of pure nephrite jade"
+  "entity.AsianMod.asian_dad": "Asian Dad",
+
+  "gamerule.AsianMod.bad_vision": "Gives every player the blindness effect",
+
+  "item.AsianMod.slipper": "Dad's Favorite Slipper",
+  "item.AsianMod.slipper.info": "He will aim this at you if he doesn't see you studying",
+
+  "item.AsianMod.counter": "Counter",
+  "item.AsianMod.counter.info": "Used %1$s times",
+
+  "item.AsianMod.nephrite_boots": "Nephrite Boots",
+  "item.AsianMod.nephrite_chestplate": "Nephrite Chestplate",
+  "item.AsianMod.nephrite_helmet": "Nephrite Helmet",
+  "item.AsianMod.nephrite_leggings": "Nephrite Leggings",
+  "item.AsianMod.nephrite_sword": "Nephrite Sword",
+
+  "item.AsianMod.incense_stick": "Incense Stick",
+  "item.AsianMod.asian_dad_spawn_egg": "Asian Dad Spawn Egg",
+
+  "item.AsianMod.fugu": "Fugu",
+  "item.AsianMod.cow_dung": "Cow Dung",
+  "item.AsianMod.wind_chime": "Wind Chime",
+
+  "item.minecraft.potion.effect.rice_wine": "Rice Wine",
+
+  "itemGroup.AsianMod": "AsianMod",
+
+  "itemTooltip.AsianMod.incense_stick": "This is an extremely powerful weapon that can air strike your enemies.",
+
+  "key.category.AsianMod.custom_category": "AsianMod Custom Category",
+  "key.AsianMod.send_to_chat": "Send to Chat",
+
+  "sound.AsianMod.wind_chime": "Wind Chime",
+
+  "text.AsianMod.greeting": "Hello there!"
 }
