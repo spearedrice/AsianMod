@@ -3,6 +3,7 @@ package org.spearedrice.asianmod;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -27,7 +28,6 @@ public class AsianMod implements ModInitializer {
 			builder.add(ModItems.COW_DUNG, 600);
 		});
 
-		// when you genuinely add tooltips to genuinely fix this shit
 		ItemTooltipCallback.EVENT.register((itemStack, tooltipContext, tooltipType, tooltipLines) -> {
 			if (itemStack.isOf(ModItems.RAW_NEPHRITE_JADE)) {
 				tooltipLines.add(Text.translatable("tooltip.asianmod.raw_nephrite_jade").formatted(Formatting.GRAY));
@@ -42,7 +42,11 @@ public class AsianMod implements ModInitializer {
 				tooltipLines.add(Text.translatable("tooltip.asianmod.bok_choy").formatted(Formatting.GRAY));
 			}
 			if (itemStack.isOf(ModItems.CHISEL)) {
-				tooltipLines.add(Text.translatable("tooltip.asianmod.chisel").formatted(Formatting.GRAY));
+				if (MinecraftClient.getInstance().options.sneakKey.isPressed()) {
+					tooltipLines.add(Text.translatable("tooltip.asianmod.chisel.shift").formatted(Formatting.YELLOW));
+				} else {
+					tooltipLines.add(Text.translatable("tooltip.asianmod.chisel.normal").formatted(Formatting.GRAY));
+				}
 			}
 			if (itemStack.isOf(ModItems.COW_DUNG)) {
 				tooltipLines.add(Text.translatable("tooltip.asianmod.cow_dung").formatted(Formatting.GRAY));
