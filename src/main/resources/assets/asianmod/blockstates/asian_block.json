@@ -1,0 +1,7 @@
+{
+  "variants" : {
+    "": {
+      "model": "asianmod:block/asian_block"
+    }
+  }
+}

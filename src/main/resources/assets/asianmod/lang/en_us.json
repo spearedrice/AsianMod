@@ -2,10 +2,16 @@
 {
   "item.asianmod.nephrite_jade": "Nephrite Jade",
   "item.asianmod.raw_nephrite_jade": "Raw Nephrite Jade",
+  "item.asianmod.chisel": "Chisel",
 
   "block.asianmod.nephrite_jade_block": "Block of Nephrite Jade",
   "block.asianmod.raw_nephrite_jade_block": "Block of Raw Nephrite Jade",
 
-  "itemgroup.asianmod.nephrite_jade_items": "Pink Garnet Items",
-  "itemgroup.asianmod.nephrite_jade_blocks": "Pink Garnet Blocks"
+  "block.asianmod.nephrite_jade_ore": "Nephrite Jade Ore",
+  "block.asianmod.nephrite_jade_deepslate_ore": "Nephrite Jade Deepslate Ore",
+
+  "block.asianmod.asian_block": "Asian Block",
+
+  "itemgroup.asianmod.nephrite_jade_items": "Nephrite Jade Items",
+  "itemgroup.asianmod.nephrite_jade_blocks": "Nephrite Jade Blocks"
 }
