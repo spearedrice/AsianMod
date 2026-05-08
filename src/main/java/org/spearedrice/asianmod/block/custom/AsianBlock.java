@@ -1,5 +1,6 @@
 package org.spearedrice.asianmod.block.custom;
 
+import org.spearedrice.asianmod.util.ModTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -13,10 +14,9 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.spearedrice.asianmod.item.ModItems;
 
+// doesn't work btw
 public class AsianBlock extends Block {
-    // big latta please accept this code
     public AsianBlock(Settings settings) {
         super(settings);
     }
@@ -24,19 +24,24 @@ public class AsianBlock extends Block {
     @Override
     protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player,
                                  BlockHitResult hit) {
-        world.playSound(player, pos, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.BLOCKS, 1f, 1f );
+        world.playSound(player, pos, SoundEvents.BLOCK_AMETHYST_BLOCK_CHIME, SoundCategory.BLOCKS, 1f, 1f);
         return ActionResult.SUCCESS;
     }
 
     @Override
     public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
         if(entity instanceof ItemEntity itemEntity) {
-            if(itemEntity.getStack().getItem() == ModItems.RAW_NEPHRITE_JADE) {
+            if(isValidItem(itemEntity.getStack())) {
                 itemEntity.setStack(new ItemStack(Items.DIAMOND, itemEntity.getStack().getCount()));
             }
         }
 
         super.onSteppedOn(world, pos, state, entity);
     }
+
+    private boolean isValidItem(ItemStack stack) {
+        return stack.isIn(ModTags.Items.TRANSFORMABLE_ITEMS);
+    }
+
 
 }

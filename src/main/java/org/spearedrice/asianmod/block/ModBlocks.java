@@ -53,14 +53,14 @@ public class ModBlocks {
                     .sounds(BlockSoundGroup.DEEPSLATE)
     );
 
-
     public static final Block ASIAN_BLOCK = register(
-            "asian_block", // the registry name (what shows in-game)
-            settings -> new AsianBlock(settings),
+            "asian_block",
+            AsianBlock::new,
             AbstractBlock.Settings.create()
                     .strength(1f)
                     .requiresTool()
     );
+
     private static <T extends Block> T register(
             String name,
             java.util.function.Function<AbstractBlock.Settings, T> factory,
