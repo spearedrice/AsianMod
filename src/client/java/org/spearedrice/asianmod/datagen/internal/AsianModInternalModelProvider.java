@@ -6,6 +6,7 @@ import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -30,8 +31,8 @@ public class AsianModInternalModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockModelGenerators gen) {
 
         // tech
-        gen.createSimpleBlock(ModBlocks.ABACUS_BLOCK);
-        gen.createSimpleBlock(ModBlocks.DUPLICATOR_BLOCK);
+        gen.createSimpleBlock(ModBlocks.ABACUS_BLOCK, BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.ABACUS_BLOCK)));
+        gen.createSimpleBlock(ModBlocks.DUPLICATOR_BLOCK, BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.DUPLICATOR_BLOCK)));
 
         // oil lamp (state based or whatever)
         gen.blockStateOutput.accept(
@@ -51,13 +52,13 @@ public class AsianModInternalModelProvider extends FabricModelProvider {
         );
 
         // timber (woo)
-        gen.woodProvider(ModBlocks.COMPRESSED_TIMBER)
-                .logWithHorizontal(ModBlocks.COMPRESSED_TIMBER);
+        // gen.woodProvider(ModBlocks.COMPACTED_TIMBER)
+        //         .logWithHorizontal(ModBlocks.COMPACTED_TIMBER);
 
         // porcelain shi
-        gen.createSimpleBlock(ModBlocks.PORCELAIN_BLOCK);
-        gen.createSimpleBlock(ModBlocks.PORCELAIN_ORE);
-        gen.createRotatedPillar(ModBlocks.PORCELAIN_LOG);
+        // gen.registerSimpleBlock(ModBlocks.PORCELAIN_BLOCK);
+        // gen.registerSimpleBlock(ModBlocks.PORCELAIN_ORE);
+        // gen.registerSimpleBlock(ModBlocks.PORCELAIN_LOG);
         gen.createCrossBlock(ModBlocks.PORCELAIN_LEAVES,
                 BlockModelGenerators.PlantType.NOT_TINTED);
     }
@@ -81,9 +82,6 @@ public class AsianModInternalModelProvider extends FabricModelProvider {
 
         // util
         gen.generateFlatItem(ModItems.ABACUS, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModItems.LIGHTNING_STICK, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModItems.POISONOUS_APPLE, ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModItems.SUSPICIOUS_SUBSTANCE, ModelTemplates.FLAT_ITEM);
     }
 
     @Override

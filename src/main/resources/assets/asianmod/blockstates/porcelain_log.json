@@ -1,0 +1,7 @@
+{
+  "variants": {
+	"axis=x": { "model": "asianmod:block/porcelain_log", "y": 90 },
+	"axis=y": { "model": "asianmod:block/porcelain_log" },
+	"axis=z": { "model": "asianmod:block/porcelain_log", "x": 90 }
+  }
+}

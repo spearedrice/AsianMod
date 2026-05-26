@@ -11,28 +11,33 @@ import net.minecraft.world.entity.MobCategory;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 
+import org.spearedrice.asianmod.AsianMod;
+
+//:::types
 public class ModEntityTypes {
+	public static final EntityType<AsianDadEntity> ASIAN_DAD_ENTITY = register(
+			"asian_dad",
+			EntityType.Builder.<AsianDadEntity>of(AsianDadEntity::new, MobCategory.MISC)
+					.sized(0.75f, 1.75f)
+	);
 
-    public static final EntityType<AsianDadEntity> ASIAN_DAD = register(
-            "asian_dad",
-            EntityType.Builder.<AsianDadEntity>of(AsianDadEntity::new, MobCategory.MISC)
-                    .sized(0.75f, 1.75f)
-    );
+	public static final EntityType<SlipperEntity> SLIPPER_ENTITY = register(
+			"slipper",
+			EntityType.Builder.<SlipperEntity>of(SlipperEntity::new, MobCategory.MISC)
+					.sized(0.25f, 0.25f)
+	);
 
-    private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
-        ResourceKey<EntityType<?>> key = ResourceKey.create(
-                Registries.ENTITY_TYPE,
-                Identifier.fromNamespaceAndPath("asianmod", name)
-        );
+	private static <T extends Entity> EntityType<T> register(String name, EntityType.Builder<T> builder) {
+		ResourceKey<EntityType<?>> key = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, name));
+		return Registry.register(BuiltInRegistries.ENTITY_TYPE, key, builder.build(key));
+	}
 
-        return Registry.register(BuiltInRegistries.ENTITY_TYPE, key, builder.build(key));
-    }
+	public static void registerModEntityTypes() {
+		AsianMod.LOGGER.info("Registering EntityTypes for " + AsianMod.MOD_ID);
+	}
 
-    public static void registerModEntityTypes() {
-        System.out.println("Registering EntityTypes for asianmod");
-    }
-
-    public static void registerAttributes() {
-        FabricDefaultAttributeRegistry.register(ASIAN_DAD, AsianDadEntity.createCubeAttributes());
-    }
+	public static void registerAttributes() {
+		FabricDefaultAttributeRegistry.register(ASIAN_DAD_ENTITY, AsianDadEntity.createAttributes());
+	}
 }
+//:::types

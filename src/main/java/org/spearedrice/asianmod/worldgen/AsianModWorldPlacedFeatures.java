@@ -10,6 +10,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.heightproviders.BiasedToBottomHeight;
 import net.minecraft.world.level.levelgen.placement.BiomeFilter;
 import net.minecraft.world.level.levelgen.placement.CountPlacement;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
@@ -21,61 +22,72 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 import org.spearedrice.asianmod.AsianMod;
 
 public class AsianModWorldPlacedFeatures {
+	public static final ResourceKey<PlacedFeature> PORCELAIN_ORE_PLACED_KEY =
+			ResourceKey.create(
+				Registries.PLACED_FEATURE,
+				Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_ore_placed")
+			);
 
-    public static final ResourceKey<PlacedFeature> PORCELAIN_ORE_PLACED =
-            ResourceKey.create(
-                    Registries.PLACED_FEATURE,
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_ore_placed")
-            );
+	public static final ResourceKey<PlacedFeature> NEPHRITE_ORE_PLACED_KEY =
+			ResourceKey.create(
+				Registries.PLACED_FEATURE,
+				Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite_ore_placed")
+			);
 
-    public static final ResourceKey<PlacedFeature> PORCELAIN_TREE_PLACED =
-            ResourceKey.create(
-                    Registries.PLACED_FEATURE,
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_tree_placed")
-            );
+	public static final ResourceKey<PlacedFeature> PORCELAIN_TREE_PLACED_KEY =
+			ResourceKey.create(
+				Registries.PLACED_FEATURE,
+				Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_tree_placed")
+			);
 
-    public static void configure(BootstrapContext<PlacedFeature> context) {
+	public static void configure(BootstrapContext<PlacedFeature> context) {
+		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures =
-                context.lookup(Registries.CONFIGURED_FEATURE);
+		// Porcelain ore: Lower depths (Y=-64 to Y=-32)
+		List<PlacementModifier> porcelainOreModifiers = List.of(
+				CountPlacement.of(6),
+					BiomeFilter.biome(),
+					InSquarePlacement.spread(),
+				HeightRangePlacement.of(BiasedToBottomHeight.of(VerticalAnchor.BOTTOM, VerticalAnchor.absolute(-32), 3))
+		);
 
-        // ore placement
-        List<PlacementModifier> porcelainOreModifiers = List.of(
-                CountPlacement.of(6),
-                BiomeFilter.biome(),
-                InSquarePlacement.spread(),
-                HeightRangePlacement.uniform(
-                        VerticalAnchor.bottom(),
-                        VerticalAnchor.absolute(64)
-                )
-        );
+		// Nephrite ore: Higher depths (Y=-32 to Y=0)
+		List<PlacementModifier> nephriteOreModifiers = List.of(
+				CountPlacement.of(6),
+					BiomeFilter.biome(),
+					InSquarePlacement.spread(),
+				HeightRangePlacement.of(BiasedToBottomHeight.of(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0), 3))
+		);
 
-        // tree placement
-        List<PlacementModifier> porcelainTreeModifiers = List.of(
-                RarityFilter.onAverageOnceEvery(10),
-                BiomeFilter.biome(),
-                InSquarePlacement.spread(),
-                PlacementUtils.HEIGHTMAP_WORLD_SURFACE
-        );
+		List<PlacementModifier> porcelainTreeModifiers = List.of(
+				RarityFilter.onAverageOnceEvery(10),
+				BiomeFilter.biome(),
+				InSquarePlacement.spread(),
+				PlacementUtils.HEIGHTMAP_WORLD_SURFACE
+		);
 
-        context.register(
-                PORCELAIN_ORE_PLACED,
-                new PlacedFeature(
-                        configuredFeatures.getOrThrow(
-                                AsianModWorldConfiguredFeatures.PORCELAIN_BLOCK_VEIN
-                        ),
-                        porcelainOreModifiers
-                )
-        );
+		context.register(
+				PORCELAIN_ORE_PLACED_KEY,
+				new PlacedFeature(
+					configuredFeatures.getOrThrow(AsianModWorldConfiguredFeatures.PORCELAIN_ORE_CONFIGURED_KEY),
+					porcelainOreModifiers
+				)
+		);
 
-        context.register(
-                PORCELAIN_TREE_PLACED,
-                new PlacedFeature(
-                        configuredFeatures.getOrThrow(
-                                AsianModWorldConfiguredFeatures.PORCELAIN_TREE
-                        ),
-                        porcelainTreeModifiers
-                )
-        );
-    }
+		context.register(
+				NEPHRITE_ORE_PLACED_KEY,
+				new PlacedFeature(
+					configuredFeatures.getOrThrow(AsianModWorldConfiguredFeatures.NEPHRITE_ORE_CONFIGURED_KEY),
+					nephriteOreModifiers
+				)
+		);
+
+		context.register(
+				PORCELAIN_TREE_PLACED_KEY,
+				new PlacedFeature(
+					configuredFeatures.getOrThrow(AsianModWorldConfiguredFeatures.PORCELAIN_TREE_CONFIGURED_KEY),
+					porcelainTreeModifiers
+				)
+		);
+	}
 }

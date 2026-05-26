@@ -18,41 +18,37 @@ import net.fabricmc.fabric.api.item.v1.ComponentTooltipAppenderRegistry;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 
 import org.spearedrice.asianmod.component.ModComponents;
-import org.spearedrice.asianmod.worldgen.ModWorldPlacedFeatures;
+import org.spearedrice.asianmod.worldgen.AsianModWorldPlacedFeatures;
 
 public class AsianMod implements ModInitializer {
-
 	public static final String MOD_ID = "asianmod";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public static final SimpleParticleType SPARKLE_PARTICLE = FabricParticleTypes.simple();
 
+	public static Identifier id(String path) {
+		return Identifier.fromNamespaceAndPath(MOD_ID, path);
+	}
+
 	@Override
 	public void onInitialize() {
-
-		LOGGER.info("AsianMod initialized");
-
-		Registry.register(
-				BuiltInRegistries.PARTICLE_TYPE,
-				Identifier.fromNamespaceAndPath(MOD_ID, "sparkle_particle"),
-				SPARKLE_PARTICLE
-		);
-
+		LOGGER.info("Hello Fabric world!");
+		Registry.register(BuiltInRegistries.PARTICLE_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "sparkle_particle"), SPARKLE_PARTICLE);
 		BiomeModifications.addFeature(
 				BiomeSelectors.foundInOverworld(),
 				GenerationStep.Decoration.UNDERGROUND_ORES,
-				ModWorldPlacedFeatures.NEPHRITE_ORE_PLACED_KEY
+				AsianModWorldPlacedFeatures.PORCELAIN_ORE_PLACED_KEY
 		);
-
+		BiomeModifications.addFeature(
+				BiomeSelectors.foundInOverworld(),
+				GenerationStep.Decoration.UNDERGROUND_ORES,
+				AsianModWorldPlacedFeatures.NEPHRITE_ORE_PLACED_KEY
+		);
 		BiomeModifications.addFeature(
 				BiomeSelectors.tag(BiomeTags.IS_FOREST),
 				GenerationStep.Decoration.VEGETAL_DECORATION,
-				ModWorldPlacedFeatures.NEPHRITE_TREE_PLACED_KEY
+				AsianModWorldPlacedFeatures.PORCELAIN_TREE_PLACED_KEY
 		);
-
-		ComponentTooltipAppenderRegistry.addAfter(
-				DataComponents.DAMAGE,
-				ModComponents.COMPONENT_WITH_TOOLTIP
-		);
+		ComponentTooltipAppenderRegistry.addAfter(DataComponents.DAMAGE, ModComponents.COMPONENT_WITH_TOOLTIP);
 	}
 }

@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "org.spearedrice.asianmod.mixin.client",
+  "compatibilityLevel": "JAVA_17",
+  "client": ["AsianClientMixin", "GameRendererMixin", "TitleScreenMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

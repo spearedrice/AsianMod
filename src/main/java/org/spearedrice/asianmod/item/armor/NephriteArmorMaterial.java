@@ -16,34 +16,25 @@ import net.minecraft.world.item.equipment.EquipmentAssets;
 import org.spearedrice.asianmod.AsianMod;
 
 public class NephriteArmorMaterial {
+	public static final int BASE_DURABILITY = 15;
 
-    public static final int BASE_DURABILITY = 20;
+	public static final ResourceKey<EquipmentAsset> NEPHRITE_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite"));
 
-    public static final ResourceKey<EquipmentAsset> NEPHRITE_ARMOR_MATERIAL_KEY =
-            ResourceKey.create(
-                    EquipmentAssets.ROOT_ID,
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite")
-            );
+	public static final TagKey<Item> REPAIRS_NEPHRITE_ARMOR = TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "repairs_nephrite_armor"));
 
-    public static final TagKey<Item> REPAIRS_NEPHRITE_ARMOR =
-            TagKey.create(
-                    BuiltInRegistries.ITEM.key(),
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "repairs_nephrite_armor")
-            );
-
-    public static final ArmorMaterial INSTANCE = new ArmorMaterial(
-            BASE_DURABILITY,
-            Map.of(
-                    ArmorType.HELMET, 3,
-                    ArmorType.CHESTPLATE, 9,
-                    ArmorType.LEGGINGS, 7,
-                    ArmorType.BOOTS, 4
-            ),
-            12,
-            SoundEvents.ARMOR_EQUIP_DIAMOND,
-            2.0F,
-            0.1F,
-            REPAIRS_NEPHRITE_ARMOR,
-            NEPHRITE_ARMOR_MATERIAL_KEY
-    );
+	public static final ArmorMaterial INSTANCE = new ArmorMaterial(
+			BASE_DURABILITY,
+			Map.of(
+					ArmorType.HELMET, 3,
+					ArmorType.CHESTPLATE, 8,
+					ArmorType.LEGGINGS, 6,
+					ArmorType.BOOTS, 3
+			),
+			5,
+			SoundEvents.ARMOR_EQUIP_IRON,
+			0.0F,
+			0.0F,
+			REPAIRS_NEPHRITE_ARMOR,
+			NEPHRITE_ARMOR_MATERIAL_KEY
+	);
 }

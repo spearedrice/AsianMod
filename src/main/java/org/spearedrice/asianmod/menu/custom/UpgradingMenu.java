@@ -15,7 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 
-import org.spearedrice.asianmod.recipe.ModRecipes;
+import org.spearedrice.asianmod.recipe.AsianModRecipes;
 import org.spearedrice.asianmod.recipe.UpgradingRecipe;
 import org.spearedrice.asianmod.recipe.UpgradingRecipeInput;
 
@@ -33,7 +33,7 @@ public class UpgradingMenu extends AbstractContainerMenu {
     private final Level level;
 
     public UpgradingMenu(int id, Inventory inventory) {
-        super(ModRecipes.UPGRADING_MENU_TYPE, id);
+        super(AsianModRecipes.UPGRADING_MENU_TYPE, id);
 
         this.level = inventory.player.level();
 
@@ -60,7 +60,7 @@ public class UpgradingMenu extends AbstractContainerMenu {
 
             Optional<RecipeHolder<UpgradingRecipe>> recipe =
                     serverLevel.recipeAccess().getRecipeFor(
-                            ModRecipes.UPGRADING_RECIPE_TYPE,
+                            AsianModRecipes.UPGRADING_RECIPE_TYPE,
                             recipeInput,
                             serverLevel
                     );
@@ -85,32 +85,7 @@ public class UpgradingMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack(Player player, int index) {
-        // Minimal sanity so shift-click isn't completely dead
-        Slot slot = this.slots.get(index);
-        if (!slot.hasItem()) return ItemStack.EMPTY;
-
-        ItemStack stack = slot.getItem();
-        ItemStack copy = stack.copy();
-
-        int inputSize = 2;
-
-        if (index < inputSize) {
-            if (!moveItemStackTo(stack, inputSize, this.slots.size(), true)) {
-                return ItemStack.EMPTY;
-            }
-        } else {
-            if (!moveItemStackTo(stack, 0, inputSize, false)) {
-                return ItemStack.EMPTY;
-            }
-        }
-
-        if (stack.isEmpty()) {
-            slot.set(ItemStack.EMPTY);
-        } else {
-            slot.setChanged();
-        }
-
-        return copy;
+        return ItemStack.EMPTY;
     }
 
     @Override

@@ -1,37 +1,66 @@
 {
 	"schemaVersion": 1,
 	"id": "asianmod",
-	"version": "${version}",
+	"version": "1.0.0",
 	"name": "Asian Mod",
-	"description": "mod that adds certain things to minecraft",
-	"authors": [
-		"spearedrice"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/spearedrice/AsianMod"
-	},
-	"license": "MIT",
 	"icon": "assets/asianmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"org.spearedrice.asianmod.AsianMod"
+			"org.spearedrice.asianmod.AsianMod",
+			"org.spearedrice.asianmod.event.AsianModEvents",
+			"org.spearedrice.asianmod.command.AsianModCommands",
+			"org.spearedrice.asianmod.effect.AsianModEffects",
+			"org.spearedrice.asianmod.potion.AsianModPotions",
+			"org.spearedrice.asianmod.sound.AsianModSounds",
+			"org.spearedrice.asianmod.damage.AsianModDamageTypes",
+			"org.spearedrice.asianmod.item.AsianModItems",
+			"org.spearedrice.asianmod.enchantment.AsianModEnchantments",
+			"org.spearedrice.asianmod.block.AsianModBlocks",
+			"org.spearedrice.asianmod.block.entity.AsianModBlockEntities",
+			"org.spearedrice.asianmod.menu.AsianModMenuType",
+			"org.spearedrice.asianmod.component.AsianModComponents",
+			"org.spearedrice.asianmod.advancement.AsianModDatagenAdvancement",
+			"org.spearedrice.asianmod.networking.AsianModNetworking",
+			"org.spearedrice.asianmod.networking.basic.AsianModNetworkingBasic",
+			"org.spearedrice.asianmod.debug.AsianModDebug",
+			"org.spearedrice.asianmod.saveddata.AsianModSavedData",
+			"org.spearedrice.asianmod.appearance.AsianModAppearance",
+			"org.spearedrice.asianmod.entity.attribute.AsianModAttributes",
+			"org.spearedrice.asianmod.recipe.AsianModRecipes",
+			"org.spearedrice.asianmod.entity.AsianModEntity",
+			"org.spearedrice.asianmod.gamerule.AsianModGameRules"
+		],
+	"client": [
+		"org.spearedrice.asianmod.client.command.AsianModClientCommands",
+		"org.spearedrice.asianmod.AsianModBlockEntityRenderer",
+		"org.spearedrice.asianmod.AsianModDynamicSound",
+		"org.spearedrice.asianmod.AsianModScreens",
+		"org.spearedrice.asianmod.rendering.CustomRenderPipeline",
+		"org.spearedrice.asianmod.rendering.HudRenderingEntrypoint",
+		"org.spearedrice.asianmod.rendering.RenderingConceptsEntrypoint",
+		"org.spearedrice.asianmod.network.basic.AsianModNetworkingBasicClient",
+		"org.spearedrice.asianmod.appearance.AsianModAppearanceClient",
+		"org.spearedrice.asianmod.keymapping.AsianModKeyMappingsClient",
+		"org.spearedrice.asianmod.AsianModRecipesClient",
+		"org.spearedrice.asianmod.entity.AsianModCustomEntityClient"
 		],
 		"fabric-datagen": [
-			"org.spearedrice.asianmod.AsianModDataGenerator"
-		],
-		"client" : [
-			"org.spearedrice.asianmod.AsianModClient"
+			"org.spearedrice.asianmod.datagen.AsianModDataGenerator"
 		]
 	},
 	"mixins": [
-		"asianmod.mixins.json"
+		"asianmod.mixins.json",
+		{
+			"config": "asianmod.client.mixins.json",
+			"environment": "client"
+		}
 	],
 	"depends": {
-		"fabricloader": ">=0.18.4",
+		"fabricloader": ">=0.18.0",
 		"minecraft": "~1.21.11",
 		"java": ">=21",
 		"fabric-api": "*"
-	}
+	},
+	"accessWidener": "asianmod.classtweaker"
 }

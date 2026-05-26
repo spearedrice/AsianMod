@@ -11,6 +11,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.server.level.ServerLevel;
 
 @Mixin(LivingEntity.class)
 public class AsianDadEntityMixin {
@@ -24,9 +25,9 @@ public class AsianDadEntityMixin {
         if (!(self instanceof AsianDadEntity dad)) return;
 
         if (self.level().isClientSide()) return;
-        dad.spawnAtLocation(new ItemStack(ModItems.ASIAN_DAD_SLIPPERS, 5));
-        dad.spawnAtLocation(new ItemStack(Items.GOLD_INGOT, 3));
-        dad.spawnAtLocation(new ItemStack(Items.DIAMOND, 1));
-        dad.spawnAtLocation(new ItemStack(Items.EMERALD, 4));
+        dad.spawnAtLocation((ServerLevel) dad.level(), new ItemStack(ModItems.SLIPPER, 5));
+        dad.spawnAtLocation((ServerLevel) dad.level(), new ItemStack(Items.GOLD_INGOT, 3));
+        dad.spawnAtLocation((ServerLevel) dad.level(), new ItemStack(Items.DIAMOND, 1));
+        dad.spawnAtLocation((ServerLevel) dad.level(), new ItemStack(Items.EMERALD, 4));
     }
 }

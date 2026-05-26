@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "asianmod:block/vertical_slab",
+    "top": "asianmod:block/vertical_slab",
+    "side": "asianmod:block/vertical_slab"
+  }
+}

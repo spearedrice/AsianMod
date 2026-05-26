@@ -1,48 +1,53 @@
 package org.spearedrice.asianmod.entity;
 
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.throwableitemprojectile.ThrowableItemProjectile;
+import net.minecraft.world.entity.projectile.ItemSupplier;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.phys.EntityHitResult;
 
 import org.spearedrice.asianmod.item.ModItems;
+import org.spearedrice.asianmod.sound.CustomSounds;
 
-public class SlipperEntity extends ThrowableItemProjectile {
+public class SlipperEntity extends Projectile implements ItemSupplier {
 
-    public SlipperEntity(EntityType<? extends SlipperEntity> type, Level level) {
-        super(type, level);
-    }
+	public SlipperEntity(Level world, LivingEntity thrower) {
+		super(ModEntityTypes.SLIPPER_ENTITY, world);
+		this.setOwner(thrower);
+	}
 
-    public SlipperEntity(Level level, LivingEntity owner) {
-        super(AsianModEntities.SLIPPER, level);
-        this.setOwner(owner);
-    }
+	public SlipperEntity(EntityType<? extends SlipperEntity> entityType, Level world) {
+		super(entityType, world);
+	}
 
-    @Override
-    protected Item getDefaultItem() {
-        return ModItems.SLIPPER;
-    }
+	@Override
+	protected void onHitEntity(EntityHitResult result) {
+		if (!this.level().isClientSide()) {
+			Entity entity = result.getEntity();
+			LivingEntity thrower = (LivingEntity) this.getOwner();
+			entity.hurt(this.damageSources().thrown(this, thrower), 30 + this.random.nextInt(7));
+			this.level().playSound(null, this.getX(), this.getY(), this.getZ(), CustomSounds.SLIPPER_HIT, SoundSource.NEUTRAL, 1.0F, 1.0F);
+			this.discard();
+		}
+	}
 
-    @Override
-    protected void onHitEntity(net.minecraft.world.phys.EntityHitResult hit) {
-        super.onHitEntity(hit);
+	@Override
+	protected void defineSynchedData(SynchedEntityData.Builder builder) {
+	}
 
-        var target = hit.getEntity();
+	@Override
+	public double getDefaultGravity() {
+		return 0.03D;
+	}
 
-        float dmg = 3.0F + random.nextFloat() * 5.0F;
-
-        target.hurt(this.damageSources().thrown(this, this.getOwner()), dmg);
-
-        level().playSound(
-                null,
-                this.blockPosition(),
-                SoundEvents.WOOL_HIT,
-                SoundSource.PLAYERS,
-                1.0F,
-                0.9F + random.nextFloat() * 0.3F
-        );
-    }
+	@Override
+	public ItemStack getItem() {
+		return new ItemStack(ModItems.SLIPPER);
+	}
 }

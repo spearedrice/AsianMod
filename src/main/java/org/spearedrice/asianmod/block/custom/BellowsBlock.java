@@ -19,7 +19,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 import org.spearedrice.asianmod.block.entity.custom.BellowsBlockEntity;
-import org.spearedrice.asianmod.entity.ModBlockEntities;
+import org.spearedrice.asianmod.block.entity.ModBlockEntities;
 
 public class BellowsBlock extends BaseEntityBlock {
 

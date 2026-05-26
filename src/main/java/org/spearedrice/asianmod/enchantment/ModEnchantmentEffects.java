@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.spearedrice.asianmod.enchantment.effect.IncenseEnchantmentEffect;
+import org.spearedrice.asianmod.enchantment.effect.LightningEnchantmentEffect;
 
 public class ModEnchantmentEffects {
 
@@ -18,6 +19,8 @@ public class ModEnchantmentEffects {
 
     public static final MapCodec<IncenseEnchantmentEffect> INCENSE_EFFECT =
             register("incense_effect", IncenseEnchantmentEffect.CODEC);
+    public static final MapCodec<LightningEnchantmentEffect> LIGHTNING_EFFECT =
+            register("lightning_effect", LightningEnchantmentEffect.CODEC);
 
     private static <T extends EnchantmentEntityEffect> MapCodec<T> register(String id, MapCodec<T> codec) {
         return Registry.register(

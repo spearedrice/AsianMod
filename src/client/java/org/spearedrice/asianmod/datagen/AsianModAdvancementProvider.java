@@ -9,7 +9,6 @@ import net.minecraft.advancements.AdvancementType;
 import net.minecraft.advancements.criterion.InventoryChangeTrigger;
 import net.minecraft.advancements.criterion.ConsumeItemTrigger;
 import net.minecraft.advancements.criterion.ItemPredicate;
-import net.minecraft.advancements.criterion.PotionPredicate;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
@@ -70,13 +69,6 @@ public class AsianModAdvancementProvider extends FabricAdvancementProvider {
 				.addCriterion("drink_rice_wine",
 						ConsumeItemTrigger.TriggerInstance.usedItem(
 								ItemPredicate.Builder.item()
-										.of(Items.POTION)
-										.withSubPredicate(
-												PotionPredicate.Builder.potion()
-														.of(AsianModPotions.RICE_WINE_POTION)
-														.build()
-										)
-										.build()
 						)
 				)
 				.save(consumer, AsianMod.MOD_ID + ":drink_rice_wine");

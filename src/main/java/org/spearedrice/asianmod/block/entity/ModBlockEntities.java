@@ -11,25 +11,24 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 
 import org.spearedrice.asianmod.AsianMod;
 import org.spearedrice.asianmod.block.ModBlocks;
-import org.spearedrice.asianmod.block.entity.custom.CounterBlockEntity;
-import org.spearedrice.asianmod.block.entity.custom.DirtChestBlockEntity;
-import org.spearedrice.asianmod.block.entity.custom.DuplicatorBlockEntity;
 import org.spearedrice.asianmod.block.entity.custom.BellowsBlockEntity;
+import org.spearedrice.asianmod.block.entity.custom.DuplicatorBlockEntity;
+import org.spearedrice.asianmod.block.entity.custom.BrassChestBlockEntity;
+import org.spearedrice.asianmod.block.entity.custom.AbacusBlockEntity;
 
 public class ModBlockEntities {
 
-    public static final BlockEntityType<BellowsBlockEntity> BELLOW_BLOCK_ENTITY =
+    public static final BlockEntityType<BellowsBlockEntity> BELLOWS_BLOCK_ENTITY =
             register("bellows", BellowsBlockEntity::new, ModBlocks.BELLOWS_BLOCK);
 
     public static final BlockEntityType<DuplicatorBlockEntity> DUPLICATOR_BLOCK_ENTITY =
             register("duplicator", DuplicatorBlockEntity::new, ModBlocks.DUPLICATOR_BLOCK);
 
-    public static final BlockEntityType<DirtChestBlockEntity> BRASS_CHEST_BLOCK_ENTITY =
-            register("brass_chest", DirtChestBlockEntity::new, ModBlocks.BRASS_CHEST_BLOCK);
+    public static final BlockEntityType<BrassChestBlockEntity> BRASS_CHEST_BLOCK_ENTITY =
+            register("brass_chest", BrassChestBlockEntity::new, ModBlocks.BRASS_CHEST);
 
-    public static final BlockEntityType<CounterBlockEntity> ABACUS_BLOCK_ENTITY =
-            register("abacus_block", CounterBlockEntity::new, ModBlocks.ABACUS_BLOCK);
-
+    public static final BlockEntityType<AbacusBlockEntity> ABACUS_BLOCK_ENTITY =
+            register("abacus_block", AbacusBlockEntity::new, ModBlocks.ABACUS_BLOCK);
     private static <T extends BlockEntity> BlockEntityType<T> register(
             String name,
             FabricBlockEntityTypeBuilder.Factory<? extends T> entityFactory,

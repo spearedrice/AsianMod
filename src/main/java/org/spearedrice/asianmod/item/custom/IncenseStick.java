@@ -31,7 +31,7 @@ public class IncenseStick extends Item {
 
         BlockPos frontOfPlayer = user.blockPosition().relative(user.getDirection(), 10);
 
-        LightningBolt lightningBolt = new LightningBolt(EntityType.DIVINE_STRIKE, level);
+        LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
         lightningBolt.setPos(frontOfPlayer.getCenter());
         level.addFreshEntity(lightningBolt);
 

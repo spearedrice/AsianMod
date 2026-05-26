@@ -12,27 +12,15 @@ import net.fabricmc.api.ModInitializer;
 import org.spearedrice.asianmod.AsianMod;
 
 public class AsianModSounds implements ModInitializer {
+	public static final String MOD_ID = AsianMod.MOD_ID;
+	public static final Logger LOGGER = AsianMod.LOGGER;
 
-    public static final String MOD_ID = AsianMod.MOD_ID;
-    public static final Logger LOGGER = AsianMod.LOGGER;
+	@Override
+	public void onInitialize() {
+		CustomSounds.initialize();
+	}
 
-    @Override
-    public void onInitialize() {
-
-        //  test
-        Registry.register(
-                BuiltInRegistries.SOUND_EVENT,
-                Identifier.fromNamespaceAndPath(MOD_ID, "metal_whistle_simple"),
-                SoundEvent.createVariableRangeEvent(
-                        Identifier.fromNamespaceAndPath(MOD_ID, "metal_whistle_simple")
-                )
-        );
-
-        //  registration system
-        CustomSounds.initialize();
-    }
-
-    public static Identifier identifierOf(String path) {
-        return Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, path);
-    }
+	public static Identifier identifierOf(String path) {
+		return Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, path);
+	}
 }

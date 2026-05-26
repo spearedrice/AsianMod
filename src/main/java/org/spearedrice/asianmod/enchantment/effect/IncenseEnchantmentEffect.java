@@ -35,7 +35,7 @@ public record IncenseEnchantmentEffect(LevelBasedValue amount) implements Enchan
                 for (float i = 0; i < numStrikes; i++) {
                     BlockPos position = victim.blockPosition();
 
-                    EntityType.DIVINE_STRIKE.spawn(
+                    EntityType.LIGHTNING_BOLT.spawn(
                             serverLevel,
                             position,
                             EntitySpawnReason.TRIGGERED

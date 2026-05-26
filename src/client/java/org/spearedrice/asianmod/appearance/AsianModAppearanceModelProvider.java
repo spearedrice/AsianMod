@@ -3,6 +3,7 @@ package org.spearedrice.asianmod.appearance;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
+import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.resources.Identifier;
 
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
@@ -20,9 +21,9 @@ public class AsianModAppearanceModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockModelGenerators gen) {
 
-        gen.createSimpleBlock(ModBlocks.PORCELAIN_ORE);
+        gen.createSimpleBlock(ModBlocks.PORCELAIN_ORE, BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.PORCELAIN_ORE)));
 
-        gen.createRotatedPillar(ModBlocks.PORCELAIN_LOG);
+        gen.createSimpleBlock(ModBlocks.PORCELAIN_LOG, BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.PORCELAIN_LOG)));
 
         gen.createCrossBlock(ModBlocks.PORCELAIN_LEAVES, BlockModelGenerators.PlantType.NOT_TINTED);
     }

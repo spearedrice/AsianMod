@@ -46,7 +46,7 @@ public class AsianModDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(AsianModChestLootTableProvider::new);
 
         // damage types
-        pack.addProvider(AsianModDamageTypesProvider.RiceWineDamageTypesGenerator::new);
+        pack.addProvider(AsianModDamageTypeGenerator::new);
         pack.addProvider(AsianModDamageTypesProvider.RiceWineDamageTypeTagGenerator::new);
 
         // models
@@ -65,12 +65,7 @@ public class AsianModDataGenerator implements DataGeneratorEntrypoint {
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
 
         // custom damage type
-        registryBuilder.add(Registries.DAMAGE_TYPE, registerable -> {
-            registerable.register(
-                    AsianModDamageTypes.RICE_WINE_DAMAGE,
-                    RICE_WINE_DAMAGE_TYPE
-            );
-        });
+        registryBuilder.add(Registries.DAMAGE_TYPE, AsianModDamageTypeGenerator::bootstrap);
 
         // worldgen
         registryBuilder.add(

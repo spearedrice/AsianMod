@@ -24,51 +24,69 @@ import org.spearedrice.asianmod.block.ModBlocks;
 
 public class AsianModWorldConfiguredFeatures {
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PORCELAIN_BLOCK_VEIN =
-            ResourceKey.create(
-                    Registries.CONFIGURED_FEATURE,
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_block_vein")
-            );
+ 	public static final ResourceKey<ConfiguredFeature<?, ?>> PORCELAIN_ORE_CONFIGURED_KEY =
+			ResourceKey.create(
+					Registries.CONFIGURED_FEATURE,
+					Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_ore")
+			);
 
-    public static final ResourceKey<ConfiguredFeature<?, ?>> PORCELAIN_TREE =
-            ResourceKey.create(
-                    Registries.CONFIGURED_FEATURE,
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_tree")
-            );
+	public static final ResourceKey<ConfiguredFeature<?, ?>> NEPHRITE_ORE_CONFIGURED_KEY =
+			ResourceKey.create(
+					Registries.CONFIGURED_FEATURE,
+					Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite_ore")
+			);
 
-    public static void configure(BootstrapContext<ConfiguredFeature<?, ?>> context) {
+	public static final ResourceKey<ConfiguredFeature<?, ?>> PORCELAIN_TREE_CONFIGURED_KEY =
+			ResourceKey.create(
+					Registries.CONFIGURED_FEATURE,
+					Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_tree")
+			);
 
-        RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+	public static void configure(BootstrapContext<ConfiguredFeature<?, ?>> context) {
 
-        List<OreConfiguration.TargetBlockState> porcelainOreConfig =
-                List.of(
-                        OreConfiguration.target(stoneReplaceable, ModBlocks.PORCELAIN_ORE.defaultBlockState()),
-                        OreConfiguration.target(deepslateReplaceable, ModBlocks.PORCELAIN_ORE.defaultBlockState())
-                );
+		RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+		RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
 
-        context.register(
-                PORCELAIN_BLOCK_VEIN,
-                new ConfiguredFeature<>(
-                        Feature.ORE,
-                        new OreConfiguration(porcelainOreConfig, 8)
-                )
-        );
+		List<OreConfiguration.TargetBlockState> porcelainOreConfig =
+				List.of(
+						OreConfiguration.target(stoneReplaceable, ModBlocks.PORCELAIN_ORE.defaultBlockState()),
+						OreConfiguration.target(deepslateReplaceable, ModBlocks.PORCELAIN_ORE.defaultBlockState())
+				);
 
-        // ✔ REAL porcelain tree
-        TreeConfiguration porcelainTree = new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.PORCELAIN_LOG),
-                new StraightTrunkPlacer(4, 2, 0),
+		List<OreConfiguration.TargetBlockState> nephriteOreConfig =
+				List.of(
+						OreConfiguration.target(stoneReplaceable, ModBlocks.NEPHRITE_ORE.defaultBlockState()),
+						OreConfiguration.target(deepslateReplaceable, ModBlocks.NEPHRITE_ORE.defaultBlockState())
+				);
 
-                BlockStateProvider.simple(ModBlocks.PORCELAIN_LEAVES),
-                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+		context.register(
+				PORCELAIN_ORE_CONFIGURED_KEY,
+				new ConfiguredFeature<>(
+						Feature.ORE,
+						new OreConfiguration(porcelainOreConfig, 8)
+				)
+		);
 
-                new TwoLayersFeatureSize(1, 0, 2)
-        ).build();
+		context.register(
+				NEPHRITE_ORE_CONFIGURED_KEY,
+				new ConfiguredFeature<>(
+						Feature.ORE,
+						new OreConfiguration(nephriteOreConfig, 8)
+				)
+		);
 
-        context.register(
-                PORCELAIN_TREE,
-                new ConfiguredFeature<>(Feature.TREE, porcelainTree)
-        );
-    }
+		// Porcelain tree
+		TreeConfiguration porcelainTree = new TreeConfiguration.TreeConfigurationBuilder(
+				BlockStateProvider.simple(ModBlocks.PORCELAIN_LOG),
+				new StraightTrunkPlacer(4, 2, 0),
+				BlockStateProvider.simple(ModBlocks.PORCELAIN_LEAVES),
+				new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+				new TwoLayersFeatureSize(1, 0, 2)
+		).build();
+
+		context.register(
+				PORCELAIN_TREE_CONFIGURED_KEY,
+				new ConfiguredFeature<>(Feature.TREE, porcelainTree)
+		);
+	}
 }

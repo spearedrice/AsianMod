@@ -1,0 +1,22 @@
+{
+  "bellows": {
+    "subtitle": "sound.asianmod.bellows",
+    "sounds": ["asianmod:bellows"]
+  },
+  "wind_chime": {
+    "subtitle": "sound.asianmod.wind_chime",
+    "sounds": ["asianmod:wind_chime"]
+  },
+  "slipper_thrown": {
+    "subtitle": "sound.asianmod.slipper_thrown",
+    "sounds": ["asianmod:slipper_thrown"]
+  },
+  "slipper_hit": {
+    "subtitle": "sound.asianmod.slipper_hit",
+    "sounds": ["asianmod:slipper_hit"]
+  },
+  "music/red_sun": {
+    "subtitle": "music.asianmod.red_sun",
+    "sounds": ["asianmod:music/red_sun"]
+  }
+}

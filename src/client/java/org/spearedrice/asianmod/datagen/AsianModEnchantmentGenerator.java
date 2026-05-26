@@ -56,104 +56,104 @@ public class AsianModEnchantmentGenerator extends FabricDynamicRegistryProvider 
         /*
          * THUNDERING
          */
-        register(
-                context,
-                ModEnchantments.THUNDERING,
+        // register(
+        //         context,
+        //         ModEnchantments.THUNDERING,
 
-                Enchantment.enchantment(
-                                Enchantment.definition(
-                                        context.lookup(Registries.ITEM)
-                                                .getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+        //         Enchantment.enchantment(
+        //                         Enchantment.definition(
+        //                                 context.lookup(Registries.ITEM)
+        //                                         .getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
 
-                                        10,
-                                        3,
+        //                                 10,
+        //                                 3,
 
-                                        Enchantment.dynamicCost(1, 10),
-                                        Enchantment.dynamicCost(1, 15),
+        //                                 Enchantment.dynamicCost(1, 10),
+        //                                 Enchantment.dynamicCost(1, 15),
 
-                                        5,
+        //                                 5,
 
-                                        EquipmentSlotGroup.HAND
-                                )
-                        )
+        //                                 EquipmentSlotGroup.HAND
+        //                         )
+        //                 )
 
-                        .withEffect(
-                                EnchantmentEffectComponents.POST_ATTACK,
-                                EnchantmentTarget.ATTACKER,
-                                EnchantmentTarget.VICTIM,
+        //                 .withEffect(
+        //                         EnchantmentEffectComponents.POST_ATTACK,
+        //                         EnchantmentTarget.ATTACKER,
+        //                         EnchantmentTarget.VICTIM,
 
-                                new LightningEnchantmentEffect(
-                                        LevelBasedValue.perLevel(0.4f, 0.2f)
-                                )
-                        )
-        );
+        //                         new LightningEnchantmentEffect(
+        //                                 LevelBasedValue.perLevel(0.4f, 0.2f)
+        //                         )
+        //                 )
+        // );
 
         /*
          * REPULSION CURSE
          */
-        register(
-                context,
-                ModEnchantments.REPULSION_CURSE,
+        // register(
+        //         context,
+        //         ModEnchantments.REPULSION_CURSE,
 
-                Enchantment.enchantment(
-                                Enchantment.definition(
-                                        context.lookup(Registries.ITEM)
-                                                .getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
+        //         Enchantment.enchantment(
+        //                         Enchantment.definition(
+        //                                 context.lookup(Registries.ITEM)
+        //                                         .getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
 
-                                        10,
-                                        3,
+        //                                 10,
+        //                                 3,
 
-                                        Enchantment.dynamicCost(1, 10),
-                                        Enchantment.dynamicCost(1, 15),
+        //                                 Enchantment.dynamicCost(1, 10),
+        //                                 Enchantment.dynamicCost(1, 15),
 
-                                        5,
+        //                                 5,
 
-                                        EquipmentSlotGroup.HAND
-                                )
-                        )
+        //                                 EquipmentSlotGroup.HAND
+        //                         )
+        //                 )
 
-                        .withEffect(
-                                EnchantmentEffectComponents.POST_ATTACK,
+        //                 .withEffect(
+        //                         EnchantmentEffectComponents.POST_ATTACK,
 
-                                EnchantmentTarget.ATTACKER,
-                                EnchantmentTarget.ATTACKER,
+        //                         EnchantmentTarget.ATTACKER,
+        //                         EnchantmentTarget.ATTACKER,
 
-                                AllOf.entityEffects(
+        //                         AllOf.entityEffects(
 
-                                        new ApplyEntityImpulse(
-                                                new Vec3(0, 0.2, -1),
-                                                new Vec3(1, 1, 1),
-                                                LevelBasedValue.perLevel(0.7f, 0.2f)
-                                        ),
+        //                                 new ApplyEntityImpulse(
+        //                                         new Vec3(0, 0.2, -1),
+        //                                         new Vec3(1, 1, 1),
+        //                                         LevelBasedValue.perLevel(0.7f, 0.2f)
+        //                                 ),
 
-                                        new PlaySoundEffect(
-                                                List.of(SoundEvents.LUNGE_1),
-                                                ConstantFloat.of(5),
-                                                ConstantFloat.of(1)
-                                        )
-                                ),
+        //                                 new PlaySoundEffect(
+        //                                         List.of(SoundEvents.LUNGE_1),
+        //                                         ConstantFloat.of(5),
+        //                                         ConstantFloat.of(1)
+        //                                 )
+        //                         ),
 
-                                LootItemEntityPropertyCondition.hasProperties(
-                                        LootContext.EntityTarget.ATTACKER,
+        //                         LootItemEntityPropertyCondition.hasProperties(
+        //                                 LootContext.EntityTarget.ATTACKER,
 
-                                        EntityPredicate.Builder.entity().flags(
-                                                EntityFlagsPredicate.Builder.flags()
-                                                        .setIsFlying(false)
-                                        )
-                                )
-                        )
-        );
+        //                                 EntityPredicate.Builder.entity().flags(
+        //                                         EntityFlagsPredicate.Builder.flags()
+        //                                                 .setIsFlying(false)
+        //                                 )
+        //                         )
+        //                 )
+        // );
     }
     // :::bootstrap
 
     // :::register-helper
-    private static void register(
-            BootstrapContext<Enchantment> context,
-            ResourceKey<Enchantment> key,
-            Enchantment.Builder builder
-    ) {
-        context.register(key, builder.build(key.location()));
-    }
+    // private static void register(
+    //         BootstrapContext<Enchantment> context,
+    //         ResourceKey<Enchantment> key,
+    //         Enchantment.Builder builder
+    // ) {
+    //     context.register(key, builder.build());
+    // }
     // :::register-helper
 }
 // :::provider

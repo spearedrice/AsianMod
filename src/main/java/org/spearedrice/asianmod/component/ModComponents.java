@@ -7,7 +7,6 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 
-import com.example.docs.ExampleMod;
 import org.spearedrice.asianmod.AsianMod;
 
 public class ModComponents {

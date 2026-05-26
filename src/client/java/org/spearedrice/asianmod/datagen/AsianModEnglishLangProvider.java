@@ -16,94 +16,114 @@ import org.spearedrice.asianmod.enchantment.ModEnchantments;
 import org.spearedrice.asianmod.entity.ModEntityTypes;
 import org.spearedrice.asianmod.item.ModItems;
 
-// :::datagen-translations:provider
 public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 
-    protected AsianModEnglishLangProvider(
-            FabricDataOutput dataOutput,
-            CompletableFuture<HolderLookup.Provider> registryLookup
-    ) {
-        super(dataOutput, "en_us", registryLookup);
-    }
+	protected AsianModEnglishLangProvider(
+			FabricDataOutput dataOutput,
+			CompletableFuture<HolderLookup.Provider> registryLookup
+	) {
+		super(dataOutput, "en_us", registryLookup);
+	}
 
-    @Override
-    public void generateTranslations(
-            HolderLookup.Provider holderLookup,
-            TranslationBuilder translationBuilder
-    ) {
+	@Override
+	public void generateTranslations(
+			HolderLookup.Provider holderLookup,
+			TranslationBuilder translationBuilder
+	) {
 
-        // core things
-        translationBuilder.add("text.asianmod.greeting", "Hello there!");
+		translationBuilder.add("text.asianmod.greeting", "Hello there!");
 
-        // items
-        translationBuilder.add(ModItems.NEPHRITE_HELMET, "Nephrite Helmet");
-        translationBuilder.add(ModItems.NEPHRITE_CHESTPLATE, "Nephrite Chestplate");
-        translationBuilder.add(ModItems.NEPHRITE_LEGGINGS, "Nephrite Leggings");
-        translationBuilder.add(ModItems.NEPHRITE_BOOTS, "Nephrite Boots");
-        translationBuilder.add(ModItems.NEPHRITE_SWORD, "Nephrite Sword");
+		translationBuilder.add(ModItems.NEPHRITE_HELMET, "Nephrite Helmet");
+		translationBuilder.add(ModItems.NEPHRITE_CHESTPLATE, "Nephrite Chestplate");
+		translationBuilder.add(ModItems.NEPHRITE_LEGGINGS, "Nephrite Leggings");
+		translationBuilder.add(ModItems.NEPHRITE_BOOTS, "Nephrite Boots");
 
-        translationBuilder.add(ModItems.SLIPPER, "Dad's Favorite Slipper");
-        translationBuilder.add(ModItems.SLIPPER, "Slipper");
+		translationBuilder.add(ModItems.NEPHRITE_SWORD, "Nephrite Sword");
+		translationBuilder.add(ModItems.NEPHRITE_AXE, "Nephrite Axe");
+		translationBuilder.add(ModItems.NEPHRITE_HOE, "Nephrite Hoe");
 
-        translationBuilder.add(ModItems.SUSPICIOUS_SUBSTANCE, "Suspicious Substance");
-        translationBuilder.add(ModItems.INCENSE_STICK, "Incense Stick");
-        translationBuilder.add(ModItems.FUGU, "Fugu");
-        translationBuilder.add(ModItems.COW_DUNG, "Cow Dung");
+		translationBuilder.add(ModItems.SLIPPER, "Slipper");
+		translationBuilder.add(ModItems.NEPHRITE_JADE, "Nephrite Jade");
+		translationBuilder.add(ModItems.RAW_NEPHRITE_JADE, "Raw Nephrite Jade");
+		translationBuilder.add(ModItems.DRAGON_PEARL, "Dragon Pearl");
+		translationBuilder.add(ModItems.SKY_LANTERN, "Sky Lantern");
+		translationBuilder.add(ModItems.INCENSE_STICK, "Incense Stick");
+		translationBuilder.add(ModItems.FUGU, "Fugu");
+		translationBuilder.add(ModItems.COW_DUNG, "Cow Dung");
+		translationBuilder.add(ModItems.ABACUS, "Abacus");
+		translationBuilder.add(ModItems.FERMENTED_RESIDUE, "Fermented Residue");
+		translationBuilder.add(ModItems.PORCELAIN_SHARD, "Porcelain Shard");
+		translationBuilder.add(ModItems.PORCELAIN, "Porcelain");
+		translationBuilder.add(ModItems.WIND_CHIME, "Wind Chime");
+		translationBuilder.add(ModItems.SILK_GLOVES, "Silk Gloves");
+		translationBuilder.add(ModItems.PAPER_LANTERN, "Paper Lantern");
+		translationBuilder.add(ModItems.FLYING_NEEDLE, "Flying Needle");
+		translationBuilder.add(ModItems.MERCURY_BUCKET, "Mercury Bucket");
+		translationBuilder.add(ModItems.CUSTOM_SOUND_ITEM, "Custom Sound Item");
 
-        translationBuilder.add(ModItems.COUNTER, "Counter");
-        translationBuilder.add(ModItems.COUNTER, "Counter");
-        translationBuilder.add(ModItems.COUNTER, "Used %1$s times");
+		translationBuilder.add(
+				Util.makeDescriptionId("effect",
+						Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "rice_wine")),
+				"Rice Wine"
+		);
 
-        translationBuilder.add(ModItems.ABACUS, "Abacus");
+		translationBuilder.add("item.minecraft.potion.effect.rice_wine", "Rice Wine");
+		translationBuilder.add("death.attack.rice_wine", "%1$s died from Rice Wine damage!");
 
-        // effects / potion
-        translationBuilder.add(
-                Util.makeDescriptionId("effect",
-                        Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "rice_wine")),
-                "Rice Wine"
-        );
+		translationBuilder.addEnchantment(ModEnchantments.THUNDERING, "Thundering");
+		translationBuilder.addEnchantment(ModEnchantments.REPULSION_CURSE, "Curse of Repulsion");
 
-        translationBuilder.add("item.minecraft.potion.effect.rice_wine", "Rice Wine");
-        translationBuilder.add("death.attack.rice_wine", "%1$s died from Rice Wine damage!");
+		translationBuilder.add(ModEntityTypes.ASIAN_DAD_ENTITY, "Asian Dad");
 
-        // enchantments
-        translationBuilder.addEnchantment(ModEnchantments.THUNDERING, "Thundering");
-        translationBuilder.addEnchantment(ModEnchantments.REPULSION_CURSE, "Curse of Repulsion");
+		translationBuilder.add(ModBlocks.RAMMED_EARTH, "Rammed Earth");
+		translationBuilder.add(ModBlocks.COMPACTED_TIMBER, "Compacted Timber");
+		translationBuilder.add(ModBlocks.CLAY_PIPE_BLOCK, "Clay Pipe Block");
+		translationBuilder.add(ModBlocks.COMPACTED_BAMBOO, "Compacted Bamboo");
+		translationBuilder.add(ModBlocks.LINGZHI, "Lingzhi");
 
-        // entities
-        translationBuilder.add(ModEntityTypes.ASIAN_DAD, "Asian Dad");
+		translationBuilder.add(ModBlocks.ABACUS_BLOCK, "Abacus Block");
+		translationBuilder.add(ModBlocks.BRASS_CHEST, "Brass Chest");
+		translationBuilder.add(ModBlocks.BELLOWS_BLOCK, "Bellows Block");
+		translationBuilder.add(ModBlocks.OIL_LAMP, "Oil Lamp");
+		translationBuilder.add(ModBlocks.DUPLICATOR_BLOCK, "Duplicator");
 
-        // blocks
-        translationBuilder.add(ModBlocks.RAMMED_EARTH, "Rammed Earth");
-        translationBuilder.add(ModBlocks.COMPACTED_TIMBER, "Compacted Timber");
-        translationBuilder.add(ModBlocks.ABACUS_BLOCK, "Abacus Block");
-        translationBuilder.add(ModBlocks.BRASS_CHEST, "Brass Chest");
+		translationBuilder.add(ModBlocks.PORCELAIN_BLOCK, "Porcelain Block");
+		translationBuilder.add(ModBlocks.PORCELAIN_STAIRS, "Porcelain Stairs");
+		translationBuilder.add(ModBlocks.PORCELAIN_SLAB, "Porcelain Slab");
+		translationBuilder.add(ModBlocks.PORCELAIN_FENCE, "Porcelain Fence");
+		translationBuilder.add(ModBlocks.PORCELAIN_DOOR, "Porcelain Door");
+		translationBuilder.add(ModBlocks.PORCELAIN_TRAPDOOR, "Porcelain Trapdoor");
+		translationBuilder.add(ModBlocks.PORCELAIN_LOG, "Porcelain Log");
+		translationBuilder.add(ModBlocks.PORCELAIN_LEAVES, "Porcelain Leaves");
+		translationBuilder.add(ModBlocks.PORCELAIN_ORE, "Porcelain Ore");
 
-        translationBuilder.add(ModBlocks.BELLOWS_BLOCK, "Bellows Block");
-        translationBuilder.add(ModBlocks.CLAY_PIPE_BLOCK, "Clay Pipe Block");
-        translationBuilder.add(ModBlocks.OIL_LAMP, "Oil Lamp");
+		translationBuilder.add(ModBlocks.NEPHRITE_BLOCK, "Nephrite Block");
+		translationBuilder.add(ModBlocks.NEPHRITE_ORE, "Nephrite Ore");
+		translationBuilder.add(ModBlocks.NEPHRITE_DOOR, "Nephrite Door");
+		// translations for nephrite jade variants used by data
+		translationBuilder.add(ModBlocks.NEPHRITE_JADE_BLOCK, "Nephrite Jade Block");
+		translationBuilder.add(ModBlocks.RAW_NEPHRITE_JADE_BLOCK, "Raw Nephrite Jade Block");
+		translationBuilder.add(ModBlocks.NEPHRITE_JADE_ORE, "Nephrite Jade Ore");
+		translationBuilder.add(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE, "Nephrite Jade Deepslate Ore");
 
-        translationBuilder.add(ModBlocks.PORCELAIN_BLOCK, "Porcelain Block");
-        translationBuilder.add(ModBlocks.PORCELAIN_STAIRS, "Porcelain Stairs");
-        translationBuilder.add(ModBlocks.PORCELAIN_SLAB, "Porcelain Slab");
-        translationBuilder.add(ModBlocks.PORCELAIN_FENCE, "Porcelain Fence");
-        translationBuilder.add(ModBlocks.PORCELAIN_DOOR, "Porcelain Door");
-        translationBuilder.add(ModBlocks.PORCELAIN_TRAPDOOR, "Porcelain Trapdoor");
 
-        translationBuilder.add(ModBlocks.VERTICAL_BAMBOO_SLAB, "Vertical Bamboo Slab");
-        translationBuilder.add(ModBlocks.LINGZHI, "Lingzhi");
+		translationBuilder.add(ModBlocks.STEEL_BLOCK, "Steel Block");
+		translationBuilder.add(ModBlocks.PIPE_BLOCK, "Pipe Block");
+		translationBuilder.add(ModBlocks.VERTICAL_OAK_LOG_SLAB, "Vertical Oak Log Slab");
+		translationBuilder.add(ModBlocks.VERTICAL_BAMBOO_SLAB, "Vertical Bamboo Slab");
+		translationBuilder.add(ModBlocks.WIND_CHIME_BLOCK, "Wind Chime Block");
+		translationBuilder.add(ModBlocks.MERCURY, "Mercury");
 
-        // item group
-        translationBuilder.add("itemGroup.asianmod", "AsianMod");
+		translationBuilder.add("itemGroup.asianmod", "AsianMod");
 
-        // keybinds
-        translationBuilder.add("key.category.asianmod.custom_category", "AsianMod Custom Category");
-        translationBuilder.add("key.asianmod.send_to_chat", "Send to Chat");
+		translationBuilder.add("key.category.asianmod.custom_category", "AsianMod Custom Category");
+		translationBuilder.add("key.asianmod.send_to_chat", "Send to Chat");
 
-        // tooltip
-        translationBuilder.add(
-                "itemTooltip.asianmod.incense_stick",
-                "This can call divine judgment on your enemies"
-        );
-    }
+		translationBuilder.add(
+				"itemTooltip.asianmod.incense_stick",
+				"This can call divine judgment on your enemies"
+		);
+
+		translationBuilder.add("music.asianmod.red_sun", "Red Sun");
+	}
 }

@@ -7,20 +7,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 
 import org.spearedrice.asianmod.AsianMod;
-import org.spearedrice.asianmod.block.ModBlocks;
-import org.spearedrice.asianmod.block.entity.custom.BellowsBlockEntity;
 
 public class ModBlockEntities {
-
-    public static final BlockEntityType<BellowsBlockEntity> BELLOWS_BLOCK_ENTITY =
-            Registry.register(
-                    BuiltInRegistries.BLOCK_ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "bellows_block_entity"),
-                    FabricBlockEntityTypeBuilder.create(
-                            BellowsBlockEntity::new,
-                            ModBlocks.BELLOWS_BLOCK
-                    ).build()
-            );
-
+    // Block entity registrations moved to block.entity.ModBlockEntities
     public static void initialize() {}
 }

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "level=0": { "model": "asianmod:block/mercury" },
+    "level=1": { "model": "asianmod:block/mercury" },
+    "level=2": { "model": "asianmod:block/mercury" },
+    "level=3": { "model": "asianmod:block/mercury" },
+    "level=4": { "model": "asianmod:block/mercury" },
+    "level=5": { "model": "asianmod:block/mercury" },
+    "level=6": { "model": "asianmod:block/mercury" },
+    "level=7": { "model": "asianmod:block/mercury" },
+    "level=8": { "model": "asianmod:block/mercury" },
+    "level=9": { "model": "asianmod:block/mercury" },
+    "level=10": { "model": "asianmod:block/mercury" },
+    "level=11": { "model": "asianmod:block/mercury" },
+    "level=12": { "model": "asianmod:block/mercury" },
+    "level=13": { "model": "asianmod:block/mercury" },
+    "level=14": { "model": "asianmod:block/mercury" },
+    "level=15": { "model": "asianmod:block/mercury" }
+  }
+}
+

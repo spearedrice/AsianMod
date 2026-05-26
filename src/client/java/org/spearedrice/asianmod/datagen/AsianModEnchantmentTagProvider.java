@@ -25,19 +25,7 @@ public class AsianModEnchantmentTagProvider extends FabricTagProvider<Enchantmen
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
 
-        /*
-         * THUNDERING
-         * regular enchantment
-         */
-        builder(EnchantmentTags.NON_TREASURE)
-                .add(ModEnchantments.THUNDERING);
 
-        /*
-         * REPULSION CURSE
-         * curse enchantment
-         */
-        builder(EnchantmentTags.CURSE)
-                .add(ModEnchantments.REPULSION_CURSE);
     }
 }
 // :::provider

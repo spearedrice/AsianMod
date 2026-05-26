@@ -7,15 +7,12 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 
 import org.spearedrice.asianmod.menu.custom.BrassChestMenu;
-import org.spearedrice.asianmod.menu.custom.UpgradingMenu;
 
 public class ModMenuType {
 
     public static final MenuType<BrassChestMenu> BRASS_CHEST =
             register("brass_chest", BrassChestMenu::new);
 
-    public static final MenuType<UpgradingMenu> UPGRADING =
-            register("upgrading", UpgradingMenu::new);
 
     public static <T extends AbstractContainerMenu> MenuType<T> register(
             String name,

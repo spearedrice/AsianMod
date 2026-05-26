@@ -1,7 +1,7 @@
 package org.spearedrice.asianmod.datagen;
 
-import java.util.List;
-import java.util.Optional;
+ import java.util.List;
+ import java.util.Optional;
 
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -31,6 +31,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 
 import org.spearedrice.asianmod.AsianMod;
 import org.spearedrice.asianmod.block.ModBlocks;
+import org.spearedrice.asianmod.block.custom.OilLampBlock;
 import org.spearedrice.asianmod.block.custom.VerticalSlabBlock;
 import org.spearedrice.asianmod.item.ModItems;
 
@@ -40,116 +41,129 @@ public class AsianModModelProvider extends FabricModelProvider {
         super(output);
     }
 
-    @Override
-    public void generateBlockStateModels(BlockModelGenerators gen) {
+	@Override
+	public void generateBlockStateModels(BlockModelGenerators gen) {
 
-        gen.createTrivialCube(ModBlocks.STEEL_BLOCK);
+		gen.createTrivialCube(ModBlocks.STEEL_BLOCK);
 
-        gen.createTrivialBlock(ModBlocks.PIPE_BLOCK, TexturedModel.COLUMN_ALT);
+		gen.createTrivialBlock(ModBlocks.PIPE_BLOCK, TexturedModel.COLUMN_ALT);
 
-        gen.family(ModBlocks.RUBY_BLOCK)
-                .stairs(ModBlocks.RUBY_STAIRS)
-                .slab(ModBlocks.RUBY_SLAB)
-                .fence(ModBlocks.RUBY_FENCE);
+		CustomBlockStateModelGenerator.registerVerticalSlab(
+				gen,
+				ModBlocks.VERTICAL_OAK_LOG_SLAB,
+				Blocks.OAK_LOG,
+				CustomBlockStateModelGenerator.blockAndTopForEnds(Blocks.OAK_LOG)
+		);
 
-        gen.createDoor(ModBlocks.RUBY_DOOR);
-        gen.createTrapdoor(ModBlocks.RUBY_TRAPDOOR);
+		gen.createTrivialCube(ModBlocks.RAMMED_EARTH);
+		gen.createTrivialBlock(ModBlocks.COMPACTED_TIMBER, TexturedModel.COLUMN);
+		gen.createTrivialCube(ModBlocks.ABACUS_BLOCK);
+		gen.createTrivialCube(ModBlocks.BRASS_CHEST);
+		gen.createTrivialCube(ModBlocks.BELLOWS_BLOCK);
+		gen.createTrivialBlock(ModBlocks.CLAY_PIPE_BLOCK, TexturedModel.COLUMN);
 
-        CustomBlockStateModelGenerator.registerVerticalSlab(
-                gen,
-                ModBlocks.VERTICAL_OAK_LOG_SLAB,
-                Blocks.OAK_LOG,
-                CustomBlockStateModelGenerator.blockAndTopForEnds(Blocks.OAK_LOG)
-        );
-    }
+		Identifier oilLampModel = TexturedModel.CUBE.create(ModBlocks.OIL_LAMP, gen.modelOutput);
+		gen.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.OIL_LAMP)
+				.with(BlockModelGenerators.createBooleanModelDispatch(OilLampBlock.ACTIVATED,
+						BlockModelGenerators.plainVariant(gen.createSuffixedVariant(ModBlocks.OIL_LAMP, "_on", ModelTemplates.CUBE_ALL, TextureMapping::cube)),
+						BlockModelGenerators.plainVariant(oilLampModel))));
+		gen.registerSimpleItemModel(ModBlocks.OIL_LAMP, oilLampModel);
 
-    @Override
-    public void generateItemModels(ItemModelGenerators gen) {
+		gen.createTrivialCube(ModBlocks.LINGZHI);
+		gen.createTrivialCube(ModBlocks.COMPACTED_BAMBOO);
+		gen.createTrivialCube(ModBlocks.WIND_CHIME_BLOCK);
+		gen.createTrivialCube(ModBlocks.DUPLICATOR_BLOCK);
+		gen.createTrivialCube(ModBlocks.VERTICAL_BAMBOO_SLAB);
 
-        gen.generateFlatItem(ModItems.RUBY, ModelTemplates.FLAT_ITEM);
+		gen.createTrivialCube(ModBlocks.NEPHRITE_BLOCK);
+		gen.createTrivialCube(ModBlocks.NEPHRITE_ORE);
+		gen.createDoor(ModBlocks.NEPHRITE_DOOR);
 
-        gen.generateFlatItem(ModItems.MINI_GOLEM_SPAWN_EGG, ModelTemplates.FLAT_ITEM);
+		gen.family(ModBlocks.PORCELAIN_BLOCK)
+				.stairs(ModBlocks.PORCELAIN_STAIRS)
+				.slab(ModBlocks.PORCELAIN_SLAB)
+				.fence(ModBlocks.PORCELAIN_FENCE);
 
-        gen.generateFlatItem(ModItems.NEPHRITE_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		gen.createDoor(ModBlocks.PORCELAIN_DOOR);
+		gen.createTrapdoor(ModBlocks.PORCELAIN_TRAPDOOR);
 
-        // Slippers (i guess bro)
-        gen.generateDyedItem(ModItems.SLIPPERS, 0xFFA06540);
+	}
 
-        gen.generateBooleanDispatch(
-                ModItems.FLASHLIGHT,
-                ItemModelUtils.isUsingItem(),
-                ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.FLASHLIGHT, "_lit", ModelTemplates.FLAT_ITEM)),
-                ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.FLASHLIGHT, ModelTemplates.FLAT_ITEM))
-        );
+	@Override
+	public void generateItemModels(ItemModelGenerators gen) {
+		gen.generateFlatItem(ModItems.NEPHRITE_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_HELMET, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_CHESTPLATE, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_LEGGINGS, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_BOOTS, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        ItemModel.Unbaked knifeOne = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.THROWING_KNIVES, "_one", ModelTemplates.FLAT_ITEM));
-        ItemModel.Unbaked knifeTwo = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.THROWING_KNIVES, "_two", ModelTemplates.FLAT_ITEM));
-        ItemModel.Unbaked knifeThree = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.THROWING_KNIVES, "_three", ModelTemplates.FLAT_ITEM));
+		gen.generateFlatItem(ModItems.ABACUS, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.NEPHRITE_JADE, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.INCENSE_STICK, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.FERMENTED_RESIDUE, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.SLIPPER, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.COW_DUNG, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.PORCELAIN_SHARD, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.PORCELAIN, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.WIND_CHIME, ModelTemplates.FLAT_ITEM);
+		gen.generateDyedItem(ModItems.SILK_GLOVES, 0xFFA06540);
+		gen.generateFlatItem(ModItems.SKY_LANTERN, ModelTemplates.FLAT_ITEM);
+		gen.generateBooleanDispatch(
+				ModItems.PAPER_LANTERN,
+				ItemModelUtils.isUsingItem(),
+				ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.PAPER_LANTERN, "_lit", ModelTemplates.FLAT_ITEM)),
+				ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.PAPER_LANTERN, ModelTemplates.FLAT_ITEM))
+		);
+		ItemModel.Unbaked needleOne = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.FLYING_NEEDLE, "_one", ModelTemplates.FLAT_ITEM));
+		ItemModel.Unbaked needleTwo = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.FLYING_NEEDLE, "_two", ModelTemplates.FLAT_ITEM));
+		ItemModel.Unbaked needleThree = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.FLYING_NEEDLE, "_three", ModelTemplates.FLAT_ITEM));
+		gen.itemModelOutput.accept(
+				ModItems.FLYING_NEEDLE,
+				ItemModelUtils.rangeSelect(
+						new Count(false),
+						List.of(
+								ItemModelUtils.override(needleOne, 1.0F),
+								ItemModelUtils.override(needleTwo, 2.0F),
+								ItemModelUtils.override(needleThree, 3.0F)
+						)
+				)
+		);
+		gen.generateFlatItem(ModItems.FUGU, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.MERCURY_BUCKET, ModelTemplates.FLAT_ITEM);
+		gen.generateFlatItem(ModItems.CUSTOM_SOUND_ITEM, ModelTemplates.FLAT_ITEM);
+		ItemModel.Unbaked pearlOverworld = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.DRAGON_PEARL, "_overworld", ModelTemplates.FLAT_ITEM));
+		ItemModel.Unbaked pearlNether = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.DRAGON_PEARL, "_nether", ModelTemplates.FLAT_ITEM));
+		ItemModel.Unbaked pearlEnd = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.DRAGON_PEARL, "_end", ModelTemplates.FLAT_ITEM));
+		gen.itemModelOutput.accept(
+				ModItems.DRAGON_PEARL,
+				ItemModelUtils.select(new ContextDimension(),
+						ItemModelUtils.when(Level.OVERWORLD, pearlOverworld),
+						ItemModelUtils.when(Level.NETHER, pearlNether),
+						ItemModelUtils.when(Level.END, pearlEnd)
+				)
+		);
+	}
 
-        gen.itemModelOutput.accept(
-                ModItems.THROWING_KNIVES,
-                ItemModelUtils.rangeSelect(
-                        new Count(false),
-                        List.of(
-                                ItemModelUtils.override(knifeOne, 1.0F),
-                                ItemModelUtils.override(knifeTwo, 2.0F),
-                                ItemModelUtils.override(knifeThree, 3.0F)
-                        )
-                )
-        );
+	@Override
+	public String getName() {
+		return "AsianMod Model Provider";
+	}
 
-        CustomItemModelGenerator.registerScaled2x(ModItems.BALLOON, gen);
-    }
 
-    @Override
-    public String getName() {
-        return "AsianMod Model Provider";
-    }
+	public static class CustomBlockStateModelGenerator {
 
-    // =========================
-    // ITEM MODEL HELPERS
-    // =========================
+		public static final ModelTemplate VERTICAL_SLAB =
+				block("vertical_slab", TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE);
 
-    public static class CustomItemModelGenerator {
-
-        public static final ModelTemplate SCALED2X =
-                item("scaled2x", TextureSlot.LAYER0);
-
-        public static void registerScaled2x(Item item, ItemModelGenerators gen) {
-            Identifier model = SCALED2X.create(
-                    item,
-                    TextureMapping.singleSlot(TextureSlot.LAYER0, ModelLocationUtils.getModelLocation(item)),
-                    gen.modelOutput
-            );
-
-            gen.itemModelOutput.accept(item, ItemModelUtils.plainModel(model));
-        }
-
-        private static ModelTemplate item(String parent, TextureSlot slot) {
-            return new ModelTemplate(
-                    Optional.of(Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "item/" + parent)),
-                    Optional.empty(),
-                    slot
-            );
-        }
-    }
-
-    // =========================
-    // BLOCK MODEL HELPERS
-    // =========================
-
-    public static class CustomBlockStateModelGenerator {
-
-        public static final ModelTemplate VERTICAL_SLAB =
-                block("vertical_slab", TextureSlot.BOTTOM, TextureSlot.TOP, TextureSlot.SIDE);
-
-        private static ModelTemplate block(String parent, TextureSlot... slots) {
-            return new ModelTemplate(
-                    Optional.of(Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "block/" + parent)),
-                    Optional.empty(),
-                    slots
-            );
-        }
+		private static ModelTemplate block(String parent, TextureSlot... slots) {
+			return new ModelTemplate(
+					Optional.of(Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "block/" + parent)),
+					Optional.empty(),
+					slots
+			);
+		}
 
         public static TextureMapping blockAndTopForEnds(Block block) {
             return new TextureMapping()
