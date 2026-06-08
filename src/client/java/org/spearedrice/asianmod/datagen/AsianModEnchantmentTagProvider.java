@@ -12,7 +12,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 
 import org.spearedrice.asianmod.enchantment.ModEnchantments;
 
-// :::provider
+
 public class AsianModEnchantmentTagProvider extends FabricTagProvider<Enchantment> {
 
     public AsianModEnchantmentTagProvider(
@@ -28,4 +28,3 @@ public class AsianModEnchantmentTagProvider extends FabricTagProvider<Enchantmen
 
     }
 }
-// :::provider

@@ -78,16 +78,14 @@ public class ModItems {
 
 	public static final Item ABACUS = register("abacus", Item::new, new Item.Properties());
 	public static final Item NEPHRITE_JADE = register("nephrite_jade", Item::new, new Item.Properties());
-	// raw nephrite item referenced by loot tables/tags - register it
+
 	public static final Item RAW_NEPHRITE_JADE = register("raw_nephrite_jade", Item::new, new Item.Properties());
 	public static final Item DRAGON_PEARL = register("dragon_pearl", Item::new, new Item.Properties());
 	public static final Item INCENSE_STICK = register("incense_stick", Item::new, new Item.Properties());
 	public static final Item FERMENTED_RESIDUE = register("fermented_residue", Item::new, new Item.Properties());
 	public static final Item SLIPPER = register("slipper", SlipperItem::new, new Item.Properties());
 	public static final Item COW_DUNG = register("cow_dung", Item::new, new Item.Properties());
-	public static final Item PORCELAIN_SHARD = register("porcelain_shard", Item::new, new Item.Properties());
 	public static final Item PORCELAIN = register("porcelain", Item::new, new Item.Properties());
-	public static final Item WIND_CHIME = register("wind_chime", Item::new, new Item.Properties());
 	public static final Item SILK_GLOVES = register("silk_gloves", Item::new, new Item.Properties());
 	public static final Item SKY_LANTERN = register("sky_lantern", SkyLanternItem::new, new Item.Properties());
 
@@ -98,6 +96,13 @@ public class ModItems {
 	public static final Item MERCURY_BUCKET = register(
 			"mercury_bucket",
 			props -> new BucketItem(ModFluids.MERCURY_STILL, props),
+			new Item.Properties()
+					.craftRemainder(net.minecraft.world.item.Items.BUCKET)
+					.stacksTo(1)
+	);
+	public static final Item RICE_WINE_BUCKET = register(
+			"rice_wine_bucket",
+			props -> new BucketItem(ModFluids.RICE_WINE_STILL, props),
 			new Item.Properties()
 					.craftRemainder(net.minecraft.world.item.Items.BUCKET)
 					.stacksTo(1)
@@ -122,12 +127,10 @@ public class ModItems {
 			output.accept(ModItems.DRAGON_PEARL);
 			output.accept(ModItems.ABACUS);
 			output.accept(ModItems.INCENSE_STICK);
-				output.accept(ModItems.FERMENTED_RESIDUE);
-				output.accept(ModItems.COW_DUNG);
-				output.accept(ModItems.PORCELAIN_SHARD);
-				output.accept(ModItems.PORCELAIN);
-				output.accept(ModItems.WIND_CHIME);
-			output.accept(ModItems.SILK_GLOVES);
+			output.accept(ModItems.FERMENTED_RESIDUE);
+			output.accept(ModItems.COW_DUNG);
+		output.accept(ModItems.PORCELAIN);
+		output.accept(ModItems.SILK_GLOVES);
 			output.accept(ModItems.PAPER_LANTERN);
 			output.accept(ModItems.FLYING_NEEDLE);
 			output.accept(ModItems.FUGU);

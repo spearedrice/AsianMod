@@ -13,12 +13,12 @@ public class AsianModNetworkingBasicModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
-        // Add block models here if needed
+
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
-        // Add item models here if needed
+
     }
 
     @Override

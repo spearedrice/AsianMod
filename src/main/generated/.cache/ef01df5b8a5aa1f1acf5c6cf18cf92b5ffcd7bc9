@@ -1,0 +1,15 @@
+// 1.21.11	-999999999-01-01T00:00:00	Asian Mod/asianmod Recipes
+09ec87c1906ce7b5a9cf764f3a5f864d64e82c87 data/asianmod/advancement/recipes/food/wheat_from_smelting_bread.json
+4bbd9d487928d288f3a27c4984cd3481fabccf81 data/asianmod/advancement/recipes/food/wheat_from_smelting_cookie.json
+ecbf2a20467b6f7d97e845fb1aaefe8e6f4cc0cc data/asianmod/advancement/recipes/food/wheat_from_smelting_hay_block.json
+38494a8cfd2e97bbd1ec78e8300a2615976e4832 data/asianmod/advancement/recipes/misc/crafting_table.json
+9b137bd4d4c74f6f7242a6e2a10afa97b76e4db1 data/asianmod/advancement/recipes/misc/dirt.json
+4653dc8d7663305ff67a9129e3f83f42b510c303 data/asianmod/advancement/recipes/misc/loom.json
+e4d150646e680425a7dbd57c8852273480843700 data/asianmod/advancement/recipes/redstone/oak_door.json
+7708ba3ffb062d82fb72d3dd1b2419d09607e4d2 data/asianmod/recipe/crafting_table.json
+9e5b40b174226ce4664d892fdce66c1b29a19b16 data/asianmod/recipe/dirt.json
+5b17d71b07f8746c4d479e411cd75a8abc08ba83 data/asianmod/recipe/loom.json
+a5121faf61e7fd6717c6e7b24dafa721284bb810 data/asianmod/recipe/oak_door.json
+4c71792d6c59acecfc512115d6ebdf99d451556b data/asianmod/recipe/wheat_from_smelting_bread.json
+e54acbd30e744aab610ce1df33718da95499681e data/asianmod/recipe/wheat_from_smelting_cookie.json
+186739c34494f4c3e126ee8592edfb69e4299832 data/asianmod/recipe/wheat_from_smelting_hay_block.json

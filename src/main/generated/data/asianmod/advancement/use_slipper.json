@@ -1,0 +1,23 @@
+{
+  "parent": "asianmod:get_slipper",
+  "criteria": {
+    "use_slipper": {
+      "trigger": "asianmod:use_tool"
+    }
+  },
+  "display": {
+    "description": "Use the slipper.",
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "asianmod:slipper"
+    },
+    "title": "Discipline"
+  },
+  "requirements": [
+    [
+      "use_slipper"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

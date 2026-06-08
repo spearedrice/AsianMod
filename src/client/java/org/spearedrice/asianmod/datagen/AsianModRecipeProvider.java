@@ -31,13 +31,13 @@ public class AsianModRecipeProvider extends FabricRecipeProvider {
             @Override
             public void buildRecipes() {
 
-                // --- shapeless example ---
+
                 shapeless(RecipeCategory.MISC, Items.DIRT)
                         .requires(Items.COARSE_DIRT)
                         .unlockedBy(getHasName(Items.COARSE_DIRT), has(Items.COARSE_DIRT))
                         .save(exporter);
 
-                // --- shaped example ---
+
                 shaped(RecipeCategory.MISC, Items.CRAFTING_TABLE)
                         .pattern("ll")
                         .pattern("ll")
@@ -46,7 +46,7 @@ public class AsianModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.CRAFTING_TABLE), has(Items.CRAFTING_TABLE))
                         .save(exporter);
 
-                // --- loom variant ---
+
                 shaped(RecipeCategory.MISC, Items.LOOM)
                         .pattern("ww")
                         .pattern("ll")
@@ -56,12 +56,12 @@ public class AsianModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.LOOM), has(Items.LOOM))
                         .save(exporter);
 
-                // --- door helper ---
+
                 doorBuilder(Items.OAK_DOOR, Ingredient.of(Items.OAK_BUTTON))
                         .unlockedBy(getHasName(Items.OAK_BUTTON), has(Items.OAK_BUTTON))
                         .save(exporter);
 
-                // --- smelting ---
+
                 oreSmelting(
                         List.of(Items.BREAD, Items.COOKIE, Items.HAY_BLOCK),
                         RecipeCategory.FOOD,

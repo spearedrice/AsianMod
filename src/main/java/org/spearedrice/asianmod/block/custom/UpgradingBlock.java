@@ -38,4 +38,3 @@ public class UpgradingBlock extends BaseEntityBlock {
 		return new UpgradingBlockEntity(pos, state);
 	}
 }
-

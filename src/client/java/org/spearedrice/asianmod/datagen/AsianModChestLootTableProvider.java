@@ -18,7 +18,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.SimpleFabricLootTableProvider
 
 import org.spearedrice.asianmod.loot.ModLootTables;
 
-// :::datagen-loot-tables:chest-provider
+
 public class AsianModChestLootTableProvider extends SimpleFabricLootTableProvider {
 
     public AsianModChestLootTableProvider(FabricDataOutput output,
@@ -29,7 +29,7 @@ public class AsianModChestLootTableProvider extends SimpleFabricLootTableProvide
     @Override
     public void generate(BiConsumer<ResourceKey<LootTable>, LootTable.Builder> consumer) {
 
-        // starter chest
+
         consumer.accept(ModLootTables.ABACUS_CHEST, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(2.0f))
@@ -43,7 +43,7 @@ public class AsianModChestLootTableProvider extends SimpleFabricLootTableProvide
                 )
         );
 
-        // "ancient temple chest"
+
         consumer.accept(ModLootTables.ANCIENT_TEMPLE_CHEST, LootTable.lootTable()
                 .withPool(LootPool.lootPool()
                         .setRolls(ConstantValue.exactly(3.0f))
@@ -58,4 +58,3 @@ public class AsianModChestLootTableProvider extends SimpleFabricLootTableProvide
         );
     }
 }
-// :::datagen-loot-tables:chest-provider

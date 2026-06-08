@@ -24,7 +24,7 @@ public class IncenseStick extends Item {
 
     @Override
     public InteractionResult use(Level level, Player user, InteractionHand hand) {
-        // server-side only
+
         if (level.isClientSide()) {
             return InteractionResult.PASS;
         }

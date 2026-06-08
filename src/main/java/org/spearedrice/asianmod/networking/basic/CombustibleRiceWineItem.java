@@ -24,7 +24,7 @@ public class CombustibleRiceWineItem extends Item {
             return InteractionResult.PASS;
         }
 
-        // payload still does the lightning effect / ritual trigger
+
         SummonLightningS2CPayload payload =
                 new SummonLightningS2CPayload(user.blockPosition());
 

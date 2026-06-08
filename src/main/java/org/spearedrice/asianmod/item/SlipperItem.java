@@ -22,10 +22,10 @@ public class SlipperItem extends Item {
 		ItemStack itemStack = player.getItemInHand(hand);
 		level.playSound(null, player.getX(), player.getY(), player.getZ(), CustomSounds.SLIPPER_THROWN, SoundSource.NEUTRAL, 0.5F, 0.4F / (level.getRandom().nextFloat() * 0.4F + 0.8F));
 		if (!level.isClientSide()) {
+			var look = player.getLookAngle().normalize().scale(1.5);
 			SlipperEntity slipperEntity = new SlipperEntity(level, player);
-			slipperEntity.setPos(player.getX(), player.getEyeY(), player.getZ());
-			slipperEntity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 1.5F, 1.0F);
-			level.addFreshEntity(slipperEntity);
+			slipperEntity.setDeltaMovement(look);
+			level.addFreshEntity((net.minecraft.world.entity.Entity)slipperEntity);
 		}
 
 		player.awardStat(Stats.ITEM_USED.get(this));

@@ -34,7 +34,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderEvents;
 
 import org.spearedrice.asianmod.AsianMod;
 
-// swiping most of this from the reference mod because i'm LAZY as fudge
+
 public class CustomRenderPipeline implements ClientModInitializer {
 	private static CustomRenderPipeline instance;
 	private static final RenderPipeline FILLED_THROUGH_WALLS = RenderPipelines.register(RenderPipeline.builder(RenderPipelines.DEBUG_FILLED_SNIPPET)
@@ -83,37 +83,37 @@ public class CustomRenderPipeline implements ClientModInitializer {
 	}
 
 	private void renderFilledBox(Matrix4fc positionMatrix, BufferBuilder buffer, float minX, float minY, float minZ, float maxX, float maxY, float maxZ, float red, float green, float blue, float alpha) {
-		// Front Face
+
 		buffer.addVertex(positionMatrix, minX, minY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, minY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, maxY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, maxY, maxZ).setColor(red, green, blue, alpha);
 
-		// Back face
+
 		buffer.addVertex(positionMatrix, maxX, minY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, minY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, maxY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, maxY, minZ).setColor(red, green, blue, alpha);
 
-		// Left face
+
 		buffer.addVertex(positionMatrix, minX, minY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, minY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, maxY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, maxY, minZ).setColor(red, green, blue, alpha);
 
-		// Right face
+
 		buffer.addVertex(positionMatrix, maxX, minY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, minY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, maxY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, maxY, maxZ).setColor(red, green, blue, alpha);
 
-		// Top face
+
 		buffer.addVertex(positionMatrix, minX, maxY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, maxY, maxZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, maxY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, minX, maxY, minZ).setColor(red, green, blue, alpha);
 
-		// Bottom face
+
 		buffer.addVertex(positionMatrix, minX, minY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, minY, minZ).setColor(red, green, blue, alpha);
 		buffer.addVertex(positionMatrix, maxX, minY, maxZ).setColor(red, green, blue, alpha);
@@ -121,7 +121,7 @@ public class CustomRenderPipeline implements ClientModInitializer {
 	}
 
 	private void drawFilledThroughWalls(Minecraft client, @SuppressWarnings("SameParameterValue") RenderPipeline pipeline) {
-		// Build the buffer
+
 		MeshData builtBuffer = buffer.buildOrThrow();
 		MeshData.DrawState drawParameters = builtBuffer.drawState();
 		VertexFormat format = drawParameters.format();

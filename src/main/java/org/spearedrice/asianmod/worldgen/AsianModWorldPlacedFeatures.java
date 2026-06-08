@@ -28,10 +28,10 @@ public class AsianModWorldPlacedFeatures {
 				Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_ore_placed")
 			);
 
-	public static final ResourceKey<PlacedFeature> NEPHRITE_ORE_PLACED_KEY =
+	public static final ResourceKey<PlacedFeature> NEPHRITE_JADE_ORE_PLACED_KEY =
 			ResourceKey.create(
 				Registries.PLACED_FEATURE,
-				Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite_ore_placed")
+				Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite_jade_ore_placed")
 			);
 
 	public static final ResourceKey<PlacedFeature> PORCELAIN_TREE_PLACED_KEY =
@@ -43,7 +43,7 @@ public class AsianModWorldPlacedFeatures {
 	public static void configure(BootstrapContext<PlacedFeature> context) {
 		HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-		// Porcelain ore: Lower depths (Y=-64 to Y=-32)
+
 		List<PlacementModifier> porcelainOreModifiers = List.of(
 				CountPlacement.of(6),
 					BiomeFilter.biome(),
@@ -51,7 +51,7 @@ public class AsianModWorldPlacedFeatures {
 				HeightRangePlacement.of(BiasedToBottomHeight.of(VerticalAnchor.BOTTOM, VerticalAnchor.absolute(-32), 3))
 		);
 
-		// Nephrite ore: Higher depths (Y=-32 to Y=0)
+
 		List<PlacementModifier> nephriteOreModifiers = List.of(
 				CountPlacement.of(6),
 					BiomeFilter.biome(),
@@ -75,9 +75,9 @@ public class AsianModWorldPlacedFeatures {
 		);
 
 		context.register(
-				NEPHRITE_ORE_PLACED_KEY,
+				NEPHRITE_JADE_ORE_PLACED_KEY,
 				new PlacedFeature(
-					configuredFeatures.getOrThrow(AsianModWorldConfiguredFeatures.NEPHRITE_ORE_CONFIGURED_KEY),
+					configuredFeatures.getOrThrow(AsianModWorldConfiguredFeatures.NEPHRITE_JADE_ORE_CONFIGURED_KEY),
 					nephriteOreModifiers
 				)
 		);

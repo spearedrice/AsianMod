@@ -16,7 +16,7 @@ import org.spearedrice.asianmod.worldgen.AsianModWorldConfiguredFeatures;
 import org.spearedrice.asianmod.worldgen.AsianModWorldPlacedFeatures;
 import org.spearedrice.asianmod.worldgen.AsianModWorldgenProvider;
 
-// :::datagen-setup:generator
+
 public class AsianModDataGenerator implements DataGeneratorEntrypoint {
 
     @Override
@@ -24,50 +24,50 @@ public class AsianModDataGenerator implements DataGeneratorEntrypoint {
 
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-        // enchantments
+
         pack.addProvider(AsianModEnchantmentGenerator::new);
 
-        // advancements
+
         pack.addProvider(AsianModAdvancementProvider::new);
 
-        // language
+
         pack.addProvider(AsianModEnglishLangProvider::new);
 
-        // tags
+
         pack.addProvider(AsianModItemTagProvider::new);
         pack.addProvider(AsianModEnchantmentTagProvider::new);
         pack.addProvider(AsianModFluidTagProvider::new);
 
-        // recipes
+
         pack.addProvider(AsianModRecipeProvider::new);
 
-        // loot tables
+
         pack.addProvider(AsianModBlockLootTableProvider::new);
         pack.addProvider(AsianModChestLootTableProvider::new);
 
-        // damage types
+
         pack.addProvider(AsianModDamageTypeGenerator::new);
         pack.addProvider(AsianModDamageTypesProvider.RiceWineDamageTypeTagGenerator::new);
 
-        // models
+
         pack.addProvider(AsianModInternalModelProvider::new);
         pack.addProvider(AsianModModelProvider::new);
         pack.addProvider(AsianModAppearanceModelProvider::new);
 
-        // networking
+
         pack.addProvider(AsianModNetworkingBasicModelProvider::new);
 
-        // worldgen
+
         pack.addProvider(AsianModWorldgenProvider::new);
     }
 
     @Override
     public void buildRegistry(RegistrySetBuilder registryBuilder) {
 
-        // custom damage type
+
         registryBuilder.add(Registries.DAMAGE_TYPE, AsianModDamageTypeGenerator::bootstrap);
 
-        // worldgen
+
         registryBuilder.add(
                 Registries.CONFIGURED_FEATURE,
                 AsianModWorldConfiguredFeatures::configure
@@ -78,11 +78,10 @@ public class AsianModDataGenerator implements DataGeneratorEntrypoint {
                 AsianModWorldPlacedFeatures::configure
         );
 
-        // enchantments
+
         registryBuilder.add(
                 Registries.ENCHANTMENT,
                 AsianModEnchantmentGenerator::bootstrap
         );
     }
 }
-// :::datagen-setup:generator

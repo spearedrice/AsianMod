@@ -30,7 +30,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider
 import org.spearedrice.asianmod.enchantment.ModEnchantments;
 import org.spearedrice.asianmod.enchantment.effect.LightningEnchantmentEffect;
 
-// :::provider
+
 public class AsianModEnchantmentGenerator extends FabricDynamicRegistryProvider {
 
     public AsianModEnchantmentGenerator(
@@ -50,110 +50,109 @@ public class AsianModEnchantmentGenerator extends FabricDynamicRegistryProvider 
         return "AsianMod Enchantments";
     }
 
-    // :::bootstrap
+
     public static void bootstrap(BootstrapContext<Enchantment> context) {
 
-        /*
-         * THUNDERING
-         */
-        // register(
-        //         context,
-        //         ModEnchantments.THUNDERING,
 
-        //         Enchantment.enchantment(
-        //                         Enchantment.definition(
-        //                                 context.lookup(Registries.ITEM)
-        //                                         .getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
 
-        //                                 10,
-        //                                 3,
 
-        //                                 Enchantment.dynamicCost(1, 10),
-        //                                 Enchantment.dynamicCost(1, 15),
 
-        //                                 5,
 
-        //                                 EquipmentSlotGroup.HAND
-        //                         )
-        //                 )
 
-        //                 .withEffect(
-        //                         EnchantmentEffectComponents.POST_ATTACK,
-        //                         EnchantmentTarget.ATTACKER,
-        //                         EnchantmentTarget.VICTIM,
 
-        //                         new LightningEnchantmentEffect(
-        //                                 LevelBasedValue.perLevel(0.4f, 0.2f)
-        //                         )
-        //                 )
-        // );
 
-        /*
-         * REPULSION CURSE
-         */
-        // register(
-        //         context,
-        //         ModEnchantments.REPULSION_CURSE,
 
-        //         Enchantment.enchantment(
-        //                         Enchantment.definition(
-        //                                 context.lookup(Registries.ITEM)
-        //                                         .getOrThrow(ItemTags.WEAPON_ENCHANTABLE),
 
-        //                                 10,
-        //                                 3,
 
-        //                                 Enchantment.dynamicCost(1, 10),
-        //                                 Enchantment.dynamicCost(1, 15),
 
-        //                                 5,
 
-        //                                 EquipmentSlotGroup.HAND
-        //                         )
-        //                 )
 
-        //                 .withEffect(
-        //                         EnchantmentEffectComponents.POST_ATTACK,
 
-        //                         EnchantmentTarget.ATTACKER,
-        //                         EnchantmentTarget.ATTACKER,
 
-        //                         AllOf.entityEffects(
 
-        //                                 new ApplyEntityImpulse(
-        //                                         new Vec3(0, 0.2, -1),
-        //                                         new Vec3(1, 1, 1),
-        //                                         LevelBasedValue.perLevel(0.7f, 0.2f)
-        //                                 ),
 
-        //                                 new PlaySoundEffect(
-        //                                         List.of(SoundEvents.LUNGE_1),
-        //                                         ConstantFloat.of(5),
-        //                                         ConstantFloat.of(1)
-        //                                 )
-        //                         ),
 
-        //                         LootItemEntityPropertyCondition.hasProperties(
-        //                                 LootContext.EntityTarget.ATTACKER,
 
-        //                                 EntityPredicate.Builder.entity().flags(
-        //                                         EntityFlagsPredicate.Builder.flags()
-        //                                                 .setIsFlying(false)
-        //                                 )
-        //                         )
-        //                 )
-        // );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
-    // :::bootstrap
 
-    // :::register-helper
-    // private static void register(
-    //         BootstrapContext<Enchantment> context,
-    //         ResourceKey<Enchantment> key,
-    //         Enchantment.Builder builder
-    // ) {
-    //     context.register(key, builder.build());
-    // }
-    // :::register-helper
+
+
+
+
+
+
+
+
+
+
 }
-// :::provider

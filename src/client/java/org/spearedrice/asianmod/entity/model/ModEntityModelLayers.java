@@ -15,6 +15,6 @@ public class ModEntityModelLayers {
 	}
 
 	public static void registerModelLayers() {
-		EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.ASIAN_DAD, AsianDadEntityModel::getTexturedModelData);
+		EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.ASIAN_DAD, AsianDadEntityModel::createBodyLayer);
 	}
 }

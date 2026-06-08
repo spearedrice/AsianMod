@@ -9,6 +9,6 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.spearedrice.asianmod.AsianMod;
 
 public class ModBlockEntities {
-    // Block entity registrations moved to block.entity.ModBlockEntities
+
     public static void initialize() {}
 }

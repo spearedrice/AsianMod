@@ -58,4 +58,3 @@ public class UpgradingBlockEntity extends BlockEntity implements ImplementedCont
 		return new UpgradingMenu(containerId, inventory);
 	}
 }
-

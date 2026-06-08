@@ -19,10 +19,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 
 import org.spearedrice.asianmod.damage.AsianModDamageTypes;
 
-// :::datagen-damage-types
+
 public class AsianModDamageTypesProvider {
 
-    // damage (not json)
+
     public static final DamageType RICE_WINE_DAMAGE_TYPE =
             new DamageType(
                     "rice_wine",
@@ -30,7 +30,7 @@ public class AsianModDamageTypesProvider {
                     0.1f
             );
 
-    // :::tags
+
     public static class RiceWineDamageTypeTagGenerator extends FabricTagProvider<DamageType> {
 
         public RiceWineDamageTypeTagGenerator(FabricDataOutput output,
@@ -71,4 +71,3 @@ public class AsianModDamageTypesProvider {
         }
     }
 }
-// :::datagen-damage-types

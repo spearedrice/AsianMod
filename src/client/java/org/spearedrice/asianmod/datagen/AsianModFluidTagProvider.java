@@ -26,7 +26,7 @@ public class AsianModFluidTagProvider extends FabricTagProvider.FluidTagProvider
         valueLookupBuilder(ModFluidTags.MERCURY)
                 .add(ModFluids.MERCURY_STILL, ModFluids.MERCURY_FLOWING);
 
-        // burn to death!!
+
         valueLookupBuilder(FluidTags.LAVA)
                 .addTag(ModFluidTags.MERCURY);
     }

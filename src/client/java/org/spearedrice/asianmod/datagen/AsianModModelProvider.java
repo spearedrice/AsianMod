@@ -34,6 +34,7 @@ import org.spearedrice.asianmod.block.ModBlocks;
 import org.spearedrice.asianmod.block.custom.OilLampBlock;
 import org.spearedrice.asianmod.block.custom.VerticalSlabBlock;
 import org.spearedrice.asianmod.item.ModItems;
+import org.spearedrice.asianmod.recipe.AsianModRecipes;
 
 public class AsianModModelProvider extends FabricModelProvider {
 
@@ -46,7 +47,6 @@ public class AsianModModelProvider extends FabricModelProvider {
 
 		gen.createTrivialCube(ModBlocks.STEEL_BLOCK);
 
-		gen.createTrivialBlock(ModBlocks.PIPE_BLOCK, TexturedModel.COLUMN_ALT);
 
 		CustomBlockStateModelGenerator.registerVerticalSlab(
 				gen,
@@ -60,7 +60,7 @@ public class AsianModModelProvider extends FabricModelProvider {
 		gen.createTrivialCube(ModBlocks.ABACUS_BLOCK);
 		gen.createTrivialCube(ModBlocks.BRASS_CHEST);
 		gen.createTrivialCube(ModBlocks.BELLOWS_BLOCK);
-		gen.createTrivialBlock(ModBlocks.CLAY_PIPE_BLOCK, TexturedModel.COLUMN);
+		gen.createTrivialBlock(ModBlocks.CLAY_PIPE, TexturedModel.COLUMN);
 
 		Identifier oilLampModel = TexturedModel.CUBE.create(ModBlocks.OIL_LAMP, gen.modelOutput);
 		gen.blockStateOutput.accept(MultiVariantGenerator.dispatch(ModBlocks.OIL_LAMP)
@@ -70,22 +70,25 @@ public class AsianModModelProvider extends FabricModelProvider {
 		gen.registerSimpleItemModel(ModBlocks.OIL_LAMP, oilLampModel);
 
 		gen.createTrivialCube(ModBlocks.LINGZHI);
-		gen.createTrivialCube(ModBlocks.COMPACTED_BAMBOO);
-		gen.createTrivialCube(ModBlocks.WIND_CHIME_BLOCK);
 		gen.createTrivialCube(ModBlocks.DUPLICATOR_BLOCK);
 		gen.createTrivialCube(ModBlocks.VERTICAL_BAMBOO_SLAB);
 
 		gen.createTrivialCube(ModBlocks.NEPHRITE_BLOCK);
-		gen.createTrivialCube(ModBlocks.NEPHRITE_ORE);
 		gen.createDoor(ModBlocks.NEPHRITE_DOOR);
+
+
+		gen.createTrivialCube(ModBlocks.NEPHRITE_JADE_BLOCK);
+		gen.createTrivialCube(ModBlocks.RAW_NEPHRITE_JADE_BLOCK);
+		gen.createTrivialCube(ModBlocks.NEPHRITE_JADE_ORE);
+		gen.createTrivialCube(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE);
+
+		gen.createTrivialCube(AsianModRecipes.UPGRADING_BLOCK);
+		gen.createTrivialCube(ModBlocks.SKY_LANTERN_BLOCK);
 
 		gen.family(ModBlocks.PORCELAIN_BLOCK)
 				.stairs(ModBlocks.PORCELAIN_STAIRS)
 				.slab(ModBlocks.PORCELAIN_SLAB)
 				.fence(ModBlocks.PORCELAIN_FENCE);
-
-		gen.createDoor(ModBlocks.PORCELAIN_DOOR);
-		gen.createTrapdoor(ModBlocks.PORCELAIN_TRAPDOOR);
 
 	}
 
@@ -105,9 +108,7 @@ public class AsianModModelProvider extends FabricModelProvider {
 		gen.generateFlatItem(ModItems.FERMENTED_RESIDUE, ModelTemplates.FLAT_ITEM);
 		gen.generateFlatItem(ModItems.SLIPPER, ModelTemplates.FLAT_ITEM);
 		gen.generateFlatItem(ModItems.COW_DUNG, ModelTemplates.FLAT_ITEM);
-		gen.generateFlatItem(ModItems.PORCELAIN_SHARD, ModelTemplates.FLAT_ITEM);
 		gen.generateFlatItem(ModItems.PORCELAIN, ModelTemplates.FLAT_ITEM);
-		gen.generateFlatItem(ModItems.WIND_CHIME, ModelTemplates.FLAT_ITEM);
 		gen.generateDyedItem(ModItems.SILK_GLOVES, 0xFFA06540);
 		gen.generateFlatItem(ModItems.SKY_LANTERN, ModelTemplates.FLAT_ITEM);
 		gen.generateBooleanDispatch(

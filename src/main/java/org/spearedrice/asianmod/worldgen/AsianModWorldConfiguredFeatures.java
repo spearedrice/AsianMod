@@ -30,10 +30,10 @@ public class AsianModWorldConfiguredFeatures {
 					Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "porcelain_ore")
 			);
 
-	public static final ResourceKey<ConfiguredFeature<?, ?>> NEPHRITE_ORE_CONFIGURED_KEY =
+	public static final ResourceKey<ConfiguredFeature<?, ?>> NEPHRITE_JADE_ORE_CONFIGURED_KEY =
 			ResourceKey.create(
 					Registries.CONFIGURED_FEATURE,
-					Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite_ore")
+					Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "nephrite_jade_ore")
 			);
 
 	public static final ResourceKey<ConfiguredFeature<?, ?>> PORCELAIN_TREE_CONFIGURED_KEY =
@@ -55,8 +55,8 @@ public class AsianModWorldConfiguredFeatures {
 
 		List<OreConfiguration.TargetBlockState> nephriteOreConfig =
 				List.of(
-						OreConfiguration.target(stoneReplaceable, ModBlocks.NEPHRITE_ORE.defaultBlockState()),
-						OreConfiguration.target(deepslateReplaceable, ModBlocks.NEPHRITE_ORE.defaultBlockState())
+						OreConfiguration.target(stoneReplaceable, ModBlocks.NEPHRITE_JADE_ORE.defaultBlockState()),
+						OreConfiguration.target(deepslateReplaceable, ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE.defaultBlockState())
 				);
 
 		context.register(
@@ -68,14 +68,14 @@ public class AsianModWorldConfiguredFeatures {
 		);
 
 		context.register(
-				NEPHRITE_ORE_CONFIGURED_KEY,
+				NEPHRITE_JADE_ORE_CONFIGURED_KEY,
 				new ConfiguredFeature<>(
 						Feature.ORE,
 						new OreConfiguration(nephriteOreConfig, 8)
 				)
 		);
 
-		// Porcelain tree
+
 		TreeConfiguration porcelainTree = new TreeConfiguration.TreeConfigurationBuilder(
 				BlockStateProvider.simple(ModBlocks.PORCELAIN_LOG),
 				new StraightTrunkPlacer(4, 2, 0),

@@ -13,7 +13,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 
 import org.spearedrice.asianmod.AsianMod;
 
-//:::types
+
 public class ModEntityTypes {
 	public static final EntityType<AsianDadEntity> ASIAN_DAD_ENTITY = register(
 			"asian_dad",
@@ -40,4 +40,3 @@ public class ModEntityTypes {
 		FabricDefaultAttributeRegistry.register(ASIAN_DAD_ENTITY, AsianDadEntity.createAttributes());
 	}
 }
-//:::types

@@ -1,4 +1,3 @@
-
 package org.spearedrice.asianmod.sound.instance;
 
 import net.minecraft.client.resources.sounds.AbstractTickableSoundInstance;

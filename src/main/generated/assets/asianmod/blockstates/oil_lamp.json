@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "activated=false": {
+      "model": "asianmod:block/oil_lamp"
+    },
+    "activated=true": {
+      "model": "asianmod:block/oil_lamp_on"
+    }
+  }
+}

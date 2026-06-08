@@ -15,7 +15,7 @@ public abstract class FlowingFluidMixin implements BucketEmptySoundGetter {
 
     @Override
     public Optional<SoundEvent> asianmod$getBucketEmptySound() {
-        // thing
+
         return Optional.of(SoundEvents.BUCKET_EMPTY);
     }
 }

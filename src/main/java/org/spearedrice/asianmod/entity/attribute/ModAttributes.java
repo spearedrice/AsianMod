@@ -11,7 +11,7 @@ import org.spearedrice.asianmod.AsianMod;
 
 public class ModAttributes {
 
-    // attributes
+
     public static final Holder<Attribute> AGGRO_RANGE = register(
             "aggro_range",
             8.0,
@@ -20,12 +20,12 @@ public class ModAttributes {
             false
     );
 
-    // initialize
+
 
     public static void initialize() {
     }
 
-    // register
+
     private static Holder<Attribute> register(
             String name,
             double defaultValue,
@@ -44,5 +44,5 @@ public class ModAttributes {
 
         return Registry.registerForHolder(BuiltInRegistries.ATTRIBUTE, identifier, attribute);
     }
-    // :::register
+
 }

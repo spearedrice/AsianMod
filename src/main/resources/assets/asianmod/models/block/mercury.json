@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/liquid",
+  "textures": {
+    "particle": "asianmod:block/mercury"
+  }
+}

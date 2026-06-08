@@ -42,7 +42,7 @@ public class AsianMod implements ModInitializer {
 		BiomeModifications.addFeature(
 				BiomeSelectors.foundInOverworld(),
 				GenerationStep.Decoration.UNDERGROUND_ORES,
-				AsianModWorldPlacedFeatures.NEPHRITE_ORE_PLACED_KEY
+				AsianModWorldPlacedFeatures.NEPHRITE_JADE_ORE_PLACED_KEY
 		);
 		BiomeModifications.addFeature(
 				BiomeSelectors.tag(BiomeTags.IS_FOREST),

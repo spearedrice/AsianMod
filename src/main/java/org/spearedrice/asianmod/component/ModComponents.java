@@ -30,7 +30,7 @@ public class ModComponents {
     );
 
     protected static void initialize() {
-        // check if this works
+
         AsianMod.LOGGER.info("Registering {} components", AsianMod.MOD_ID);
     }
 }

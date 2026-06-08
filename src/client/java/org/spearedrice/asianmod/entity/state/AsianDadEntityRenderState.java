@@ -7,4 +7,6 @@ public class AsianDadEntityRenderState extends LivingEntityRenderState {
 	public final AnimationState idleAnimationState = new AnimationState();
 	public final AnimationState angryAnimationState = new AnimationState();
 	public final AnimationState throwingAnimationState = new AnimationState();
+	public net.minecraft.client.model.HumanoidModel.ArmPose rightArmPose;
+	public net.minecraft.client.model.HumanoidModel.ArmPose leftArmPose;
 }

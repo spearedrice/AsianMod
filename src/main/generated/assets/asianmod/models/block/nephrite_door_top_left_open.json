@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "asianmod:block/nephrite_door_bottom",
+    "top": "asianmod:block/nephrite_door_top"
+  }
+}

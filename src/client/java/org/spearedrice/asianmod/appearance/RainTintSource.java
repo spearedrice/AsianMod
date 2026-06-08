@@ -10,10 +10,10 @@ import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 
-// :::1
+
 public record RainTintSource(int color) implements ItemTintSource {
 
-    // :::create_codec
+
     public static final MapCodec<RainTintSource> MAP_CODEC =
             RecordCodecBuilder.mapCodec(instance ->
                     instance.group(
@@ -22,27 +22,27 @@ public record RainTintSource(int color) implements ItemTintSource {
                                     .forGetter(RainTintSource::color)
                     ).apply(instance, RainTintSource::new)
             );
-    // :::create_codec
 
-    // :::1
+
+
     public RainTintSource() {
-        this(0x00BFFF); // deepsky blue
+        this(0x00BFFF);
     }
 
     @Override
     public int calculate(ItemStack stack, ClientLevel level, LivingEntity entity) {
-        // :::tint_calculation
+
         if (level != null && level.isRaining()) {
             return ARGB.opaque(color);
         }
-        // :::tint_calculation
 
-        return ARGB.opaque(0xFFEFD5); // idk
+
+        return ARGB.opaque(0xFFEFD5);
     }
 
     @Override
     public MapCodec<? extends ItemTintSource> type() {
         return MAP_CODEC;
     }
-    // :::1
+
 }

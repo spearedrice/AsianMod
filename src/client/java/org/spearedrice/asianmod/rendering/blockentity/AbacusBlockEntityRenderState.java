@@ -13,4 +13,3 @@ public class AbacusBlockEntityRenderState extends BlockEntityRenderState {
         this.clicks = clicks;
     }
 }
-// :::render-state

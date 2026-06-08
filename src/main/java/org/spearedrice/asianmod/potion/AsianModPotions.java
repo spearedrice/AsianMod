@@ -15,7 +15,7 @@ import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import org.spearedrice.asianmod.AsianMod;
 import org.spearedrice.asianmod.effect.AsianModEffects;
 
-// :::1
+
 public class AsianModPotions implements ModInitializer {
 
     public static final Holder<Potion> RICE_WINE_POTION =

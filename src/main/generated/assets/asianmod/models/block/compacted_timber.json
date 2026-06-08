@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "asianmod:block/compacted_timber_top",
+    "side": "asianmod:block/compacted_timber_side"
+  }
+}

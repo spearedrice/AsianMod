@@ -1,104 +1,86 @@
 package org.spearedrice.asianmod.entity.model;
 
-import net.minecraft.client.animation.KeyframeAnimation;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartNames;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.CubeListBuilder;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.util.Mth;
 
-import org.spearedrice.asianmod.entity.animation.AsianDadAnimations;
 import org.spearedrice.asianmod.entity.state.AsianDadEntityRenderState;
 
 public class AsianDadEntityModel extends EntityModel<AsianDadEntityRenderState> {
-	private final ModelPart body;
 	private final ModelPart head;
-	private final ModelPart leftArm;
+	private final ModelPart hat;
+	private final ModelPart body;
 	private final ModelPart rightArm;
-	private final ModelPart leftLeg;
+	private final ModelPart leftArm;
 	private final ModelPart rightLeg;
-	private final KeyframeAnimation idle;
-	private final KeyframeAnimation angry;
-	private final KeyframeAnimation throwing;
+	private final ModelPart leftLeg;
 
 	public AsianDadEntityModel(ModelPart root) {
 		super(root);
-		body = root.getChild(PartNames.BODY);
-		head = root.getChild(PartNames.HEAD);
-		leftArm = root.getChild(PartNames.LEFT_ARM);
-		rightArm = root.getChild(PartNames.RIGHT_ARM);
-		leftLeg = root.getChild(PartNames.LEFT_LEG);
-		rightLeg = root.getChild(PartNames.RIGHT_LEG);
-		this.idle = AsianDadAnimations.IDLE.bake(root);
-		this.angry = AsianDadAnimations.ANGRY.bake(root);
-		this.throwing = AsianDadAnimations.THROWING.bake(root);
+		this.head = root.getChild(PartNames.HEAD);
+		this.hat = this.head.getChild(PartNames.HAT);
+		this.body = root.getChild(PartNames.BODY);
+		this.rightArm = root.getChild(PartNames.RIGHT_ARM);
+		this.leftArm = root.getChild(PartNames.LEFT_ARM);
+		this.rightLeg = root.getChild(PartNames.RIGHT_LEG);
+		this.leftLeg = root.getChild(PartNames.LEFT_LEG);
 	}
 
-	public static LayerDefinition getTexturedModelData() {
-		MeshDefinition modelData = new MeshDefinition();
-		PartDefinition root = modelData.getRoot();
-		root.addOrReplaceChild(
-				PartNames.BODY,
-				CubeListBuilder.create().texOffs(32, 32).addBox(
-						-4,
-						0,
-						-2,
-						8,
-						12,
-						4
-				),
-				PartPose.offset(0, 0, 0)
-		);
-		root.addOrReplaceChild(
-				PartNames.HEAD,
-				CubeListBuilder.create().texOffs(0, 0).addBox(-4, -8, -4, 8, 8, 8),
-				PartPose.offset(0, 0, 0)
-		);
-		root.addOrReplaceChild(
-				PartNames.LEFT_ARM,
-				CubeListBuilder.create().texOffs(80, 32).addBox(-4, -2, -2, 4, 12, 4),
-				PartPose.offset(4, 2, 0)
-		);
-		root.addOrReplaceChild(
-				PartNames.RIGHT_ARM,
-				CubeListBuilder.create().texOffs(80, 32).addBox(0, -2, -2, 4, 12, 4),
-				PartPose.offset(-4, 2, 0)
-		);
-		root.addOrReplaceChild(
-				PartNames.LEFT_LEG,
-				CubeListBuilder.create().texOffs(0, 32).addBox(-2, 0, -2, 4, 12, 4),
-				PartPose.offset(2, 12, 0)
-		);
-		root.addOrReplaceChild(
-				PartNames.RIGHT_LEG,
-				CubeListBuilder.create().texOffs(32, 32).addBox(-2, 0, -2, 4, 12, 4),
-				PartPose.offset(-2, 12, 0)
-		);
-		return LayerDefinition.create(modelData, 128, 128);
+	public static LayerDefinition createBodyLayer() {
+
+		MeshDefinition mesh = new MeshDefinition();
+		PartDefinition root = mesh.getRoot();
+
+
+		root.addOrReplaceChild(PartNames.HEAD,
+			CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8, 8, 8),
+			PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition head = root.getChild(PartNames.HEAD);
+		head.addOrReplaceChild(PartNames.HAT,
+			CubeListBuilder.create().texOffs(32, 0).addBox(-4.0F, -8.0F, -4.0F, 8, 8, 8, new CubeDeformation(0.5F)),
+			PartPose.ZERO);
+
+
+		root.addOrReplaceChild(PartNames.BODY,
+			CubeListBuilder.create().texOffs(16, 16).addBox(-4.0F, 0.0F, -2.0F, 8, 12, 4),
+			PartPose.offset(0.0F, 0.0F, 0.0F));
+
+
+		root.addOrReplaceChild(PartNames.RIGHT_ARM,
+			CubeListBuilder.create().texOffs(40, 16).addBox(-3.0F, -2.0F, -2.0F, 4, 12, 4),
+			PartPose.offset(-5.0F, 2.0F, 0.0F));
+		root.addOrReplaceChild(PartNames.LEFT_ARM,
+			CubeListBuilder.create().texOffs(32, 48).mirror().addBox(-1.0F, -2.0F, -2.0F, 4, 12, 4),
+			PartPose.offset(5.0F, 2.0F, 0.0F));
+
+
+		root.addOrReplaceChild(PartNames.RIGHT_LEG,
+			CubeListBuilder.create().texOffs(0, 16).addBox(-2.0F, 0.0F, -2.0F, 4, 12, 4),
+			PartPose.offset(-1.9F, 12.0F, 0.0F));
+		root.addOrReplaceChild(PartNames.LEFT_LEG,
+			CubeListBuilder.create().texOffs(16, 48).mirror().addBox(-2.0F, 0.0F, -2.0F, 4, 12, 4),
+			PartPose.offset(1.9F, 12.0F, 0.0F));
+
+		return LayerDefinition.create(mesh, 64, 64);
 	}
 
 	@Override
 	public void setupAnim(AsianDadEntityRenderState state) {
-		super.setupAnim(state);
-		if (state.throwingAnimationState.isStarted()) {
-			this.throwing.apply(state.throwingAnimationState, state.ageInTicks);
-		} else if (state.angryAnimationState.isStarted()) {
-			this.angry.apply(state.angryAnimationState, state.ageInTicks);
-		} else if (state.idleAnimationState.isStarted()) {
-			this.idle.apply(state.idleAnimationState, state.ageInTicks);
-		} else {
-			head.xRot = state.xRot * Mth.RAD_TO_DEG;
-			head.yRot = state.yRot * Mth.RAD_TO_DEG;
-			float limbSwingAmplitude = state.walkAnimationSpeed;
-			float limbSwingAnimationProgress = state.walkAnimationPos;
-			leftArm.xRot = Mth.cos(limbSwingAnimationProgress * 0.6662f) * limbSwingAmplitude;
-			rightArm.xRot = Mth.cos(limbSwingAnimationProgress * 0.6662f + Mth.PI) * limbSwingAmplitude;
-			leftLeg.xRot = Mth.cos(limbSwingAnimationProgress * 0.6662f + Mth.PI) * limbSwingAmplitude;
-			rightLeg.xRot = Mth.cos(limbSwingAnimationProgress * 0.6662f) * limbSwingAmplitude;
+		this.hat.visible = false;
+		if(state.rightArmPose == net.minecraft.client.model.HumanoidModel.ArmPose.THROW_TRIDENT) {
+			this.rightArm.xRot = this.rightArm.xRot * 0.5F - (float)Math.PI;
 		}
+		this.head.xRot = state.xRot * Mth.DEG_TO_RAD;
+		this.head.yRot = state.yRot * Mth.DEG_TO_RAD;
 	}
+
 }

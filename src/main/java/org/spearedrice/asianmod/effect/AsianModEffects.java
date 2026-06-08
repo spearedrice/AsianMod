@@ -19,6 +19,6 @@ public class AsianModEffects implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        // intentionally empty
+
     }
 }

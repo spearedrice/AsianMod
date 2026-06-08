@@ -18,4 +18,3 @@ public class PaperLanternItem extends Item {
 		return InteractionResult.CONSUME;
 	}
 }
-

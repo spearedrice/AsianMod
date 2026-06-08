@@ -11,6 +11,6 @@ import net.minecraft.client.Minecraft;
 public class AsianClientMixin {
     @Inject(at = @At("HEAD"), method = "run")
     private void run(CallbackInfo info) {
-        // tbh i copied this from the reference one since i couldn't tell was for
+
     }
 }

@@ -13,15 +13,15 @@ public class SavedBlockData extends SavedData {
 	private int blocksBroken = 0;
 
 	private static final Codec<SavedBlockData> CODEC = Codec.INT.xmap(
-			SavedBlockData::new, // Create a new 'SavedBlockData' from the stored number.
-			SavedBlockData::getBlocksBroken // Return the number from the 'SavedBlockData' to be saved
+			SavedBlockData::new,
+			SavedBlockData::getBlocksBroken
 	);
 
 	private static final SavedDataType<SavedBlockData> TYPE = new SavedDataType<>(
-			"saved_block_data", // The unique name for this saved data.
-			SavedBlockData::new, // If there's no 'SavedBlockData', yet create one and refresh fields.
-			CODEC, // The codec used for serialization/deserialization.
-			null // A data fixer, which is not needed here.
+			"saved_block_data",
+			SavedBlockData::new,
+			CODEC,
+			null
 	);
 
 	public SavedBlockData() {}
@@ -43,7 +43,7 @@ public class SavedBlockData extends SavedData {
 		ServerLevel level = server.getLevel(ServerLevel.OVERWORLD);
 
 		if (level == null) {
-			return new SavedBlockData(); // Return a new instance if the level is null.
+			return new SavedBlockData();
 		}
 
 		return level.getDataStorage().computeIfAbsent(TYPE);

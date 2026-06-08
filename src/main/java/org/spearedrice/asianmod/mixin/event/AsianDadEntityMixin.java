@@ -16,7 +16,7 @@ import net.minecraft.server.level.ServerLevel;
 @Mixin(LivingEntity.class)
 public class AsianDadEntityMixin {
 
-    // is it die or death loot
+
     @Inject(method = "dropAllDeathLoot", at = @At("HEAD"))
     private void asianmod$onDeath(DamageSource source, CallbackInfo ci) {
 

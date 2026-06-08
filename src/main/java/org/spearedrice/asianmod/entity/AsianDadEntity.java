@@ -4,6 +4,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
@@ -15,6 +16,7 @@ import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.FollowParentGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
@@ -46,7 +48,6 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 
 	@Override
 	protected void registerGoals() {
-		// Target players so the dad will actively attack players with slippers
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
 
 		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.0, 40, 10.0F));
@@ -58,16 +59,22 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 
 	@Override
 	public void performRangedAttack(LivingEntity target, float pullProgress) {
-		// Accept any LivingEntity target (not just Player) to avoid ClassCastException
-		// and to allow the dad to throw slippers at any living target.
-		throwSlipper(target);
-		throwingAnimationState.start(this.tickCount);
+		this.setAggressive(true);
+		this.startUsingItem(net.minecraft.world.InteractionHand.MAIN_HAND);
+		double dx = target.getX() - this.getX();
+		double dy = target.getY(0.3333333333333333) - this.getEyeY();
+		double dz = target.getZ() - this.getZ();
+		double dist = Math.sqrt(dx * dx + dz * dz);
+		SlipperEntity slipper = new SlipperEntity(this.level(), this);
+		slipper.shoot(dx, dy + dist * 0.2, dz, 1.6F, 12.0F);
+		this.level().addFreshEntity(slipper);
+		this.stopUsingItem();
+		this.setAggressive(false);
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
-		// Ensure idle animation is playing if nothing else is
 		if (!throwingAnimationState.isStarted() && !angryAnimationState.isStarted()) {
 			if (!idleAnimationState.isStarted()) {
 				idleAnimationState.start(this.tickCount);
@@ -76,12 +83,30 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 	}
 
 	private void throwSlipper(LivingEntity target) {
-		SlipperEntity slipper = new SlipperEntity(level(), this);
-		slipper.setPos(getX(), getEyeY(), getZ());
-		// Aim at the target's eye position when available for better accuracy
-		double targetY = target.getEyeY();
-		slipper.shoot(target.getX() - getX(), targetY - getEyeY(), target.getZ() - getZ(), 1.5F, 0);
-		level().addFreshEntity(slipper);
+		if (this.level().isClientSide()) return;
+
+		if (target == null) {
+			if (this.getTarget() != null) {
+				target = this.getTarget();
+			} else {
+				Player nearest = null;
+				double closest = Double.MAX_VALUE;
+				for (Player p : this.level().players()) {
+					double d = this.distanceToSqr(p);
+					if (d < closest) {
+						closest = d;
+						nearest = p;
+					}
+				}
+				if (nearest == null) return;
+				target = nearest;
+			}
+		}
+
+		SlipperEntity slipper = new SlipperEntity(this.level(), this);
+		Vec3 dir = new Vec3(target.getX() - this.getX(), target.getEyeY() - this.getEyeY(), target.getZ() - this.getZ()).normalize().scale(1.5);
+		slipper.setDeltaMovement(dir);
+		this.level().addFreshEntity((net.minecraft.world.entity.Entity)slipper);
 	}
 
 	@Override

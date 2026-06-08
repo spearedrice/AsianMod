@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "asianmod:block/porcelain_leaves"
+  }
+}

@@ -52,9 +52,7 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModItems.COW_DUNG, "Cow Dung");
 		translationBuilder.add(ModItems.ABACUS, "Abacus");
 		translationBuilder.add(ModItems.FERMENTED_RESIDUE, "Fermented Residue");
-		translationBuilder.add(ModItems.PORCELAIN_SHARD, "Porcelain Shard");
 		translationBuilder.add(ModItems.PORCELAIN, "Porcelain");
-		translationBuilder.add(ModItems.WIND_CHIME, "Wind Chime");
 		translationBuilder.add(ModItems.SILK_GLOVES, "Silk Gloves");
 		translationBuilder.add(ModItems.PAPER_LANTERN, "Paper Lantern");
 		translationBuilder.add(ModItems.FLYING_NEEDLE, "Flying Needle");
@@ -77,8 +75,7 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 
 		translationBuilder.add(ModBlocks.RAMMED_EARTH, "Rammed Earth");
 		translationBuilder.add(ModBlocks.COMPACTED_TIMBER, "Compacted Timber");
-		translationBuilder.add(ModBlocks.CLAY_PIPE_BLOCK, "Clay Pipe Block");
-		translationBuilder.add(ModBlocks.COMPACTED_BAMBOO, "Compacted Bamboo");
+		translationBuilder.add(ModBlocks.CLAY_PIPE, "Clay Pipe");
 		translationBuilder.add(ModBlocks.LINGZHI, "Lingzhi");
 
 		translationBuilder.add(ModBlocks.ABACUS_BLOCK, "Abacus Block");
@@ -91,16 +88,13 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModBlocks.PORCELAIN_STAIRS, "Porcelain Stairs");
 		translationBuilder.add(ModBlocks.PORCELAIN_SLAB, "Porcelain Slab");
 		translationBuilder.add(ModBlocks.PORCELAIN_FENCE, "Porcelain Fence");
-		translationBuilder.add(ModBlocks.PORCELAIN_DOOR, "Porcelain Door");
-		translationBuilder.add(ModBlocks.PORCELAIN_TRAPDOOR, "Porcelain Trapdoor");
 		translationBuilder.add(ModBlocks.PORCELAIN_LOG, "Porcelain Log");
 		translationBuilder.add(ModBlocks.PORCELAIN_LEAVES, "Porcelain Leaves");
 		translationBuilder.add(ModBlocks.PORCELAIN_ORE, "Porcelain Ore");
 
 		translationBuilder.add(ModBlocks.NEPHRITE_BLOCK, "Nephrite Block");
-		translationBuilder.add(ModBlocks.NEPHRITE_ORE, "Nephrite Ore");
 		translationBuilder.add(ModBlocks.NEPHRITE_DOOR, "Nephrite Door");
-		// translations for nephrite jade variants used by data
+
 		translationBuilder.add(ModBlocks.NEPHRITE_JADE_BLOCK, "Nephrite Jade Block");
 		translationBuilder.add(ModBlocks.RAW_NEPHRITE_JADE_BLOCK, "Raw Nephrite Jade Block");
 		translationBuilder.add(ModBlocks.NEPHRITE_JADE_ORE, "Nephrite Jade Ore");
@@ -108,10 +102,9 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 
 
 		translationBuilder.add(ModBlocks.STEEL_BLOCK, "Steel Block");
-		translationBuilder.add(ModBlocks.PIPE_BLOCK, "Pipe Block");
 		translationBuilder.add(ModBlocks.VERTICAL_OAK_LOG_SLAB, "Vertical Oak Log Slab");
 		translationBuilder.add(ModBlocks.VERTICAL_BAMBOO_SLAB, "Vertical Bamboo Slab");
-		translationBuilder.add(ModBlocks.WIND_CHIME_BLOCK, "Wind Chime Block");
+        
 		translationBuilder.add(ModBlocks.MERCURY, "Mercury");
 
 		translationBuilder.add("itemGroup.asianmod", "AsianMod");

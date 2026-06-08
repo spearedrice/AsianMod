@@ -7,4 +7,3 @@ public class SkyLanternItem extends Item {
 		super(settings);
 	}
 }
-

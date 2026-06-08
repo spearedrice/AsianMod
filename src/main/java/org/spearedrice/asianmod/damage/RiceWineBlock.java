@@ -7,13 +7,13 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class RiceWineBlock extends Block {
+public class RiceWineBlock extends LiquidBlock {
 
     public RiceWineBlock(Properties settings) {
-        super(settings);
+        super(org.spearedrice.asianmod.fluid.ModFluids.RICE_WINE_STILL, settings);
     }
 
     @Override

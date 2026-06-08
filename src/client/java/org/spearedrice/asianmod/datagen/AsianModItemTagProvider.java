@@ -20,6 +20,6 @@ public class AsianModItemTagProvider extends FabricTagProvider<Item> {
 
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
-        // Add item tags later because I'm a bum (satire)
+
     }
 }

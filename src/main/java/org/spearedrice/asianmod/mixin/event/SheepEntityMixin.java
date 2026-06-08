@@ -30,18 +30,18 @@ public class SheepEntityMixin {
         InteractionResult result =
                 SheepShearCallback.EVENT.invoker().interact(player, (Sheep) (Object) this);
 
-        // FAIL =  cancel
+
         if (result == InteractionResult.FAIL) {
             cir.setReturnValue(InteractionResult.FAIL);
             return;
         }
 
-        // SUCCESS = shear complete
+
         if (result == InteractionResult.SUCCESS) {
             cir.setReturnValue(InteractionResult.SUCCESS);
             return;
         }
 
-        // PASS = do nothing
+
     }
 }

@@ -10,4 +10,6 @@ import org.spearedrice.asianmod.AsianMod;
 public class ModFluidTags {
     public static final TagKey<Fluid> MERCURY =
             TagKey.create(Registries.FLUID, Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "mercury"));
+    public static final TagKey<Fluid> RICE_WINE =
+            TagKey.create(Registries.FLUID, Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "rice_wine"));
 }

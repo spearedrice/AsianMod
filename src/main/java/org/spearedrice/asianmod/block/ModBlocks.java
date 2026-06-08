@@ -69,9 +69,9 @@ public class ModBlocks {
 			true
 	);
 
-	public static final Block CLAY_PIPE_BLOCK = register(
-			"clay_pipe_block",
-			Block::new,
+	public static final Block CLAY_PIPE = register(
+			"clay_pipe",
+			RotatedPillarBlock::new,
 			BlockBehaviour.Properties.of(),
 			true
 	);
@@ -117,12 +117,6 @@ public class ModBlocks {
 			"porcelain_fence", FenceBlock::new, BlockBehaviour.Properties.of(), true
 	);
 
-	public static final Block PORCELAIN_DOOR = register(
-			"porcelain_door", settings -> new DoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(), true
-	);
-	public static final Block PORCELAIN_TRAPDOOR = register(
-			"porcelain_trapdoor", settings -> new TrapDoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(), true
-	);
 
 	public static final Block VERTICAL_OAK_LOG_SLAB = register(
 			"vertical_oak_log_slab", VerticalSlabBlock::new, BlockBehaviour.Properties.of(), true
@@ -132,14 +126,7 @@ public class ModBlocks {
 			"nephrite_block", Block::new, BlockBehaviour.Properties.of(), true
 	);
 
-	public static final Block NEPHRITE_ORE = register(
-			"nephrite_ore",
-			Block::new,
-			BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_IRON_ORE),
-			true
-	);
 
-	// Additional nephrite variants used by data/json resources
 	public static final Block NEPHRITE_JADE_BLOCK = register(
 			"nephrite_jade_block", Block::new, BlockBehaviour.Properties.of(), true
 	);
@@ -177,12 +164,6 @@ public class ModBlocks {
 			true
 	);
 
-	public static final Block PIPE_BLOCK = register(
-			"pipe_block",
-			Block::new,
-			BlockBehaviour.Properties.of(),
-			true
-	);
 
 
 	public static final Block VERTICAL_BAMBOO_SLAB = register(
@@ -199,18 +180,15 @@ public class ModBlocks {
 			true
 	);
 
-	public static final Block COMPACTED_BAMBOO = register(
-			"compacted_bamboo",
-			Block::new,
-			BlockBehaviour.Properties.of(),
-			true
-	);
 
-	public static final Block WIND_CHIME_BLOCK = register(
-			"wind_chime_block",
+    
+
+
+	public static final Block SKY_LANTERN_BLOCK = register(
+			"sky_lantern",
 			Block::new,
 			BlockBehaviour.Properties.of(),
-			true
+			false
 	);
 	private static Block register(String name, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties settings, boolean shouldRegisterItem) {
 		ResourceKey<Block> blockKey = keyOfBlock(name);
@@ -245,7 +223,7 @@ public class ModBlocks {
 			itemGroup.accept(ModBlocks.ABACUS_BLOCK.asItem());
 			itemGroup.accept(ModBlocks.BRASS_CHEST.asItem());
 			itemGroup.accept(ModBlocks.BELLOWS_BLOCK.asItem());
-			itemGroup.accept(ModBlocks.CLAY_PIPE_BLOCK.asItem());
+			itemGroup.accept(ModBlocks.CLAY_PIPE.asItem());
 			itemGroup.accept(ModBlocks.OIL_LAMP.asItem());
 			itemGroup.accept(ModBlocks.PORCELAIN_ORE.asItem());
 			itemGroup.accept(ModBlocks.PORCELAIN_LOG.asItem());
@@ -254,14 +232,11 @@ public class ModBlocks {
 			itemGroup.accept(ModBlocks.PORCELAIN_STAIRS.asItem());
 			itemGroup.accept(ModBlocks.PORCELAIN_SLAB.asItem());
 			itemGroup.accept(ModBlocks.PORCELAIN_FENCE.asItem());
-			itemGroup.accept(ModBlocks.PORCELAIN_DOOR.asItem());
-			itemGroup.accept(ModBlocks.PORCELAIN_TRAPDOOR.asItem());
 			itemGroup.accept(ModBlocks.VERTICAL_OAK_LOG_SLAB.asItem());
 
 			itemGroup.accept(ModBlocks.NEPHRITE_BLOCK.asItem());
-			itemGroup.accept(ModBlocks.NEPHRITE_ORE.asItem());
 			itemGroup.accept(ModBlocks.NEPHRITE_DOOR.asItem());
-			// Accept the nephrite jade variants used by resources
+
 			itemGroup.accept(ModBlocks.NEPHRITE_JADE_BLOCK.asItem());
 			itemGroup.accept(ModBlocks.RAW_NEPHRITE_JADE_BLOCK.asItem());
 			itemGroup.accept(ModBlocks.NEPHRITE_JADE_ORE.asItem());

@@ -45,6 +45,7 @@ processResources {
 	filesMatching("fabric.mod.json") {
 		expand "version": inputs.properties.version
 	}
+	duplicatesStrategy = 'exclude'
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -62,11 +63,11 @@ jar {
 	from("LICENSE") {
 		rename { "${it}_${inputs.properties.archivesName}" }
 	}
-	duplicatesStrategy = 'include'
+	duplicatesStrategy = 'exclude'
 }
 
 tasks.withType(Jar).configureEach {
-	duplicatesStrategy = 'include'
+	duplicatesStrategy = 'exclude'
 }
 
 publishing {

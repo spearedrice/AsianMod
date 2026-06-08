@@ -63,10 +63,10 @@ public class AsianModAppearanceClient implements ClientModInitializer {
 		);
 		BlockRenderLayerMap.putBlock(ModBlocks.MERCURY, ChunkSectionLayer.TRANSLUCENT);
 
-		// Register entity renderers
+
 		EntityRendererRegistry.register(ModEntityTypes.SLIPPER_ENTITY, ThrownItemRenderer::new);
 
-		// Register event listeners
+
 		AsianDadMusicEventListener.register();
 	}
 }

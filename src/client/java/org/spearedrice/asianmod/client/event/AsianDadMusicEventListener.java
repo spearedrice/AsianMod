@@ -44,7 +44,7 @@ public class AsianDadMusicEventListener {
 
 	private static void startMusic(Minecraft client) {
 		if (client.getSoundManager() != null && client.player != null && musicInstance == null) {
-			// looping music (looping the rooms reference?)
+
 			musicInstance = SimpleSoundInstance.forUI(CustomSounds.RED_SUN, 1.0F);
 			client.getSoundManager().play(musicInstance);
 			isMusicPlaying = true;
@@ -59,4 +59,3 @@ public class AsianDadMusicEventListener {
 		isMusicPlaying = false;
 	}
 }
-
