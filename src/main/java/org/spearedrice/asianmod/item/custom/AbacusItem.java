@@ -34,11 +34,5 @@ public class AbacusItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay displayComponent, Consumer<Component> textConsumer, TooltipFlag type) {
-        if (stack.has(ModComponents.CLICK_COUNT_COMPONENT)) {
-            int count = stack.get(ModComponents.CLICK_COUNT_COMPONENT);
-            textConsumer.accept(Component.translatable("item.AsianMod.abacus.info", count).withStyle(ChatFormatting.GOLD));
-        }
-    }
+
 }

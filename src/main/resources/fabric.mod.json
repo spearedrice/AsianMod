@@ -36,7 +36,7 @@
 		"org.spearedrice.asianmod.AsianModBlockEntityRenderer",
 		"org.spearedrice.asianmod.AsianModDynamicSound",
 		"org.spearedrice.asianmod.AsianModScreens",
-		"org.spearedrice.asianmod.rendering.CustomRenderPipeline",
+		"org.spearedrice.asianmod.rendering.TuffRenderPipeline",
 		"org.spearedrice.asianmod.rendering.HudRenderingEntrypoint",
 		"org.spearedrice.asianmod.rendering.RenderingConceptsEntrypoint",
 		"org.spearedrice.asianmod.network.basic.AsianModNetworkingBasicClient",
@@ -51,10 +51,7 @@
 	},
 	"mixins": [
 		"asianmod.mixins.json",
-		{
-			"config": "asianmod.client.mixins.json",
-			"environment": "client"
-		}
+		"asianmod.client.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.18.0",

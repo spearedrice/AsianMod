@@ -48,18 +48,6 @@ public class AsianModRecipes implements ModInitializer {
                     new MenuType<>(UpgradingMenu::new, FeatureFlags.VANILLA_SET)
             );
 
-    private static final Identifier UPGRADING_BLOCK_ID =
-            Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "upgrading_block");
-
-    public static final UpgradingBlock UPGRADING_BLOCK =
-            Registry.register(
-                    BuiltInRegistries.BLOCK,
-                    UPGRADING_BLOCK_ID,
-                    new UpgradingBlock(
-                            BlockBehaviour.Properties.of()
-                                    .setId(ResourceKey.create(Registries.BLOCK, UPGRADING_BLOCK_ID))
-                    )
-            );
 
     @Override
     public void onInitialize() {

@@ -35,8 +35,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.world.WorldRenderEvents;
 import org.spearedrice.asianmod.AsianMod;
 
 
-public class CustomRenderPipeline implements ClientModInitializer {
-	private static CustomRenderPipeline instance;
+public class TuffRenderPipeline implements ClientModInitializer {
+	private static TuffRenderPipeline instance;
 	private static final RenderPipeline FILLED_THROUGH_WALLS = RenderPipelines.register(RenderPipeline.builder(RenderPipelines.DEBUG_FILLED_SNIPPET)
 			.withLocation(Identifier.fromNamespaceAndPath(AsianMod.MOD_ID, "pipeline/debug_filled_box_through_walls"))
 			.withDepthTestFunction(DepthTestFunction.NO_DEPTH_TEST)
@@ -51,7 +51,7 @@ public class CustomRenderPipeline implements ClientModInitializer {
 	private static final Matrix4f TEXTURE_MATRIX = new Matrix4f();
 	private MappableRingBuffer vertexBuffer;
 
-	public static CustomRenderPipeline getInstance() {
+	public static TuffRenderPipeline getInstance() {
 		return instance;
 	}
 

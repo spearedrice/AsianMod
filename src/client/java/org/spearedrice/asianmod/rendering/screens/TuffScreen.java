@@ -6,9 +6,9 @@ import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
-public class CustomScreen extends Screen {
+public class TuffScreen extends Screen {
     public Screen parent;
-    public CustomScreen(Component title, Screen parent) {
+    public TuffScreen(Component title, Screen parent) {
         super(title);
         this.parent = parent;
     }
@@ -18,7 +18,7 @@ public class CustomScreen extends Screen {
         this.minecraft.setScreen(this.parent);
     }
 
-    public CustomScreen(Component title) {
+    public TuffScreen(Component title) {
         super(title);
     }
 
@@ -32,7 +32,7 @@ public class CustomScreen extends Screen {
 
         this.addRenderableWidget(buttonWidget);
 
-        CustomWidget customWidget = new CustomWidget(40, 80, 120, 20);
+        TuffWidget customWidget = new TuffWidget(40, 80, 120, 20);
         this.addRenderableWidget(customWidget);
     }
 
@@ -40,6 +40,6 @@ public class CustomScreen extends Screen {
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float delta) {
         super.render(graphics, mouseX, mouseY, delta);
 
-        graphics.drawString(this.font, "Special Button", 40, 40 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
+        graphics.drawString(this.font, "Tuff Button", 40, 40 - this.font.lineHeight - 10, 0xFFFFFFFF, true);
     }
 }

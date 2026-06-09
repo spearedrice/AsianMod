@@ -47,14 +47,6 @@ public class AsianModModelProvider extends FabricModelProvider {
 
 		gen.createTrivialCube(ModBlocks.STEEL_BLOCK);
 
-
-		CustomBlockStateModelGenerator.registerVerticalSlab(
-				gen,
-				ModBlocks.VERTICAL_OAK_LOG_SLAB,
-				Blocks.OAK_LOG,
-				CustomBlockStateModelGenerator.blockAndTopForEnds(Blocks.OAK_LOG)
-		);
-
 		gen.createTrivialCube(ModBlocks.RAMMED_EARTH);
 		gen.createTrivialBlock(ModBlocks.COMPACTED_TIMBER, TexturedModel.COLUMN);
 		gen.createTrivialCube(ModBlocks.ABACUS_BLOCK);
@@ -82,7 +74,6 @@ public class AsianModModelProvider extends FabricModelProvider {
 		gen.createTrivialCube(ModBlocks.NEPHRITE_JADE_ORE);
 		gen.createTrivialCube(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE);
 
-		gen.createTrivialCube(AsianModRecipes.UPGRADING_BLOCK);
 		gen.createTrivialCube(ModBlocks.SKY_LANTERN_BLOCK);
 
 		gen.family(ModBlocks.PORCELAIN_BLOCK)

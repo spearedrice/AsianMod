@@ -102,7 +102,6 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 
 
 		translationBuilder.add(ModBlocks.STEEL_BLOCK, "Steel Block");
-		translationBuilder.add(ModBlocks.VERTICAL_OAK_LOG_SLAB, "Vertical Oak Log Slab");
 		translationBuilder.add(ModBlocks.VERTICAL_BAMBOO_SLAB, "Vertical Bamboo Slab");
         
 		translationBuilder.add(ModBlocks.MERCURY, "Mercury");
@@ -118,5 +117,11 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 		);
 
 		translationBuilder.add("music.asianmod.red_sun", "Red Sun");
+
+		translationBuilder.add("sound.asianmod.bellows", "Bellows bellowing");
+
+		translationBuilder.add("sound.asianmod.wind_chime", "Wind chime chiming");
+
+		translationBuilder.add("sound.asianmod.slipper_thrown", "Slipper being thrown at player");
 	}
 }

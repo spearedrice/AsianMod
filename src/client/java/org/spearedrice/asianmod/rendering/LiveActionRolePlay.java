@@ -8,8 +8,8 @@ import net.minecraft.resources.Identifier;
 
 import org.spearedrice.asianmod.AsianMod;
 
-public class DrawContextExampleScreen extends Screen {
-    public DrawContextExampleScreen() {
+public class LiveActionRolePlay extends Screen {
+    public LiveActionRolePlay() {
         super(Component.empty());
     }
 

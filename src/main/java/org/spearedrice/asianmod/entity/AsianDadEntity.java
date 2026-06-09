@@ -13,11 +13,13 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.WaterAvoidingRandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RangedAttackGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.FollowParentGoal;
 import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -48,19 +50,15 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 
 	@Override
 	protected void registerGoals() {
-		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
-
-		this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.0, 40, 10.0F));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false));
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 8));
-		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, true));
+		this.goalSelector.addGoal(2, new AsianDadSlipperAttackGoal(this, 1.0, 40, 10.0F));
+		this.goalSelector.addGoal(5, new WaterAvoidingRandomStrollGoal(this, 1.0));
+		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, 8.0F));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 	}
 
 	@Override
 	public void performRangedAttack(LivingEntity target, float pullProgress) {
-		this.setAggressive(true);
-		this.startUsingItem(net.minecraft.world.InteractionHand.MAIN_HAND);
 		double dx = target.getX() - this.getX();
 		double dy = target.getY(0.3333333333333333) - this.getEyeY();
 		double dz = target.getZ() - this.getZ();
@@ -68,8 +66,6 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 		SlipperEntity slipper = new SlipperEntity(this.level(), this);
 		slipper.shoot(dx, dy + dist * 0.2, dz, 1.6F, 12.0F);
 		this.level().addFreshEntity(slipper);
-		this.stopUsingItem();
-		this.setAggressive(false);
 	}
 
 	@Override
@@ -82,31 +78,34 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 		}
 	}
 
-	private void throwSlipper(LivingEntity target) {
-		if (this.level().isClientSide()) return;
 
-		if (target == null) {
-			if (this.getTarget() != null) {
-				target = this.getTarget();
-			} else {
-				Player nearest = null;
-				double closest = Double.MAX_VALUE;
-				for (Player p : this.level().players()) {
-					double d = this.distanceToSqr(p);
-					if (d < closest) {
-						closest = d;
-						nearest = p;
-					}
-				}
-				if (nearest == null) return;
-				target = nearest;
-			}
+
+	private static class AsianDadSlipperAttackGoal extends RangedAttackGoal {
+		private final AsianDadEntity dad;
+
+		public AsianDadSlipperAttackGoal(RangedAttackMob mob, double speedModifier, int attackInterval, float attackRadius) {
+			super(mob, speedModifier, attackInterval, attackRadius);
+			this.dad = (AsianDadEntity)mob;
 		}
 
-		SlipperEntity slipper = new SlipperEntity(this.level(), this);
-		Vec3 dir = new Vec3(target.getX() - this.getX(), target.getEyeY() - this.getEyeY(), target.getZ() - this.getZ()).normalize().scale(1.5);
-		slipper.setDeltaMovement(dir);
-		this.level().addFreshEntity((net.minecraft.world.entity.Entity)slipper);
+		@Override
+		public void start() {
+			super.start();
+			this.dad.setAggressive(true);
+			this.dad.startUsingItem(InteractionHand.MAIN_HAND);
+		}
+
+		@Override
+		public void stop() {
+			super.stop();
+			this.dad.stopUsingItem();
+			this.dad.setAggressive(false);
+		}
+
+		@Override
+		public boolean canUse() {
+			return super.canUse();
+		}
 	}
 
 	@Override

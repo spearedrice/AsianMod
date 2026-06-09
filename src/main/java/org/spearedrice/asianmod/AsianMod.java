@@ -33,6 +33,7 @@ public class AsianMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Hello Fabric world!");
+
 		Registry.register(BuiltInRegistries.PARTICLE_TYPE, Identifier.fromNamespaceAndPath(MOD_ID, "sparkle_particle"), SPARKLE_PARTICLE);
 		BiomeModifications.addFeature(
 				BiomeSelectors.foundInOverworld(),

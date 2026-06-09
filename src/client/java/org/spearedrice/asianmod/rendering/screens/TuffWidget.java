@@ -5,8 +5,8 @@ import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.network.chat.Component;
 
-public class CustomWidget extends AbstractWidget {
-    public CustomWidget(int x, int y, int width, int height) {
+public class TuffWidget extends AbstractWidget {
+    public TuffWidget(int x, int y, int width, int height) {
         super(x, y, width, height, Component.empty());
     }
 

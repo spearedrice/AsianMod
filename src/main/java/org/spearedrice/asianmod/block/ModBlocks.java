@@ -118,10 +118,6 @@ public class ModBlocks {
 	);
 
 
-	public static final Block VERTICAL_OAK_LOG_SLAB = register(
-			"vertical_oak_log_slab", VerticalSlabBlock::new, BlockBehaviour.Properties.of(), true
-	);
-
 	public static final Block NEPHRITE_BLOCK = register(
 			"nephrite_block", Block::new, BlockBehaviour.Properties.of(), true
 	);
@@ -181,9 +177,6 @@ public class ModBlocks {
 	);
 
 
-    
-
-
 	public static final Block SKY_LANTERN_BLOCK = register(
 			"sky_lantern",
 			Block::new,
@@ -232,7 +225,6 @@ public class ModBlocks {
 			itemGroup.accept(ModBlocks.PORCELAIN_STAIRS.asItem());
 			itemGroup.accept(ModBlocks.PORCELAIN_SLAB.asItem());
 			itemGroup.accept(ModBlocks.PORCELAIN_FENCE.asItem());
-			itemGroup.accept(ModBlocks.VERTICAL_OAK_LOG_SLAB.asItem());
 
 			itemGroup.accept(ModBlocks.NEPHRITE_BLOCK.asItem());
 			itemGroup.accept(ModBlocks.NEPHRITE_DOOR.asItem());

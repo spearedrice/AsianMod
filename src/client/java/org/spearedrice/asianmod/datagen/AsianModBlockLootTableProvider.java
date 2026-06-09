@@ -4,6 +4,7 @@ import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -39,31 +40,29 @@ public class AsianModBlockLootTableProvider extends FabricBlockLootTableProvider
 
         dropSelf(ModBlocks.PORCELAIN_BLOCK);
         dropSelf(ModBlocks.PORCELAIN_FENCE);
-        dropSelf(ModBlocks.PORCELAIN_SLAB);
+        add(ModBlocks.PORCELAIN_SLAB, block -> createSlabItemTable(block));
         dropSelf(ModBlocks.PORCELAIN_STAIRS);
         dropSelf(ModBlocks.PORCELAIN_LOG);
-        dropSelf(ModBlocks.PORCELAIN_LEAVES);
-
+        createLeavesDrops(ModBlocks.PORCELAIN_LEAVES, Blocks.OAK_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
 
         dropSelf(ModBlocks.NEPHRITE_BLOCK);
-        dropSelf(ModBlocks.NEPHRITE_DOOR);
-
+        add(ModBlocks.NEPHRITE_DOOR, block -> createDoorTable(block));
 
         dropSelf(ModBlocks.NEPHRITE_JADE_BLOCK);
         dropSelf(ModBlocks.RAW_NEPHRITE_JADE_BLOCK);
-        dropSelf(ModBlocks.NEPHRITE_JADE_ORE);
-        dropSelf(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE);
 
+        add(ModBlocks.NEPHRITE_JADE_ORE,
+                createOreDrop(ModBlocks.NEPHRITE_JADE_ORE, ModItems.RAW_NEPHRITE_JADE));
 
+        add(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE,
+                createOreDrop(ModBlocks.NEPHRITE_JADE_DEEPSLATE_ORE, ModItems.RAW_NEPHRITE_JADE));
 
 
         dropSelf(ModBlocks.VERTICAL_BAMBOO_SLAB);
         dropSelf(ModBlocks.LINGZHI);
         dropSelf(ModBlocks.STEEL_BLOCK);
-        dropSelf(ModBlocks.VERTICAL_OAK_LOG_SLAB);
         dropSelf(ModBlocks.DUPLICATOR_BLOCK);
-        dropSelf(AsianModRecipes.UPGRADING_BLOCK);
-        dropSelf(ModBlocks.SKY_LANTERN_BLOCK);
+        add(ModBlocks.SKY_LANTERN_BLOCK, block -> createSingleItemTable(ModItems.SKY_LANTERN));
 
 
         add(ModBlocks.PORCELAIN_ORE,

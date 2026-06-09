@@ -1,10 +1,14 @@
-
 {
-  "layers": [{"texture": "asianmod:nephrite"}],
-  "slots": {
-    "head": {"equip_sound": "item.armor.equip_generic", "unequip_sound": "item.armor.unequip_generic", "model": "asianmod:nephrite_helmet"},
-    "chest": {"equip_sound": "item.armor.equip_generic", "unequip_sound": "item.armor.unequip_generic", "model": "asianmod:nephrite_chestplate"},
-    "legs": {"equip_sound": "item.armor.equip_generic", "unequip_sound": "item.armor.unequip_generic", "model": "asianmod:nephrite_leggings"},
-    "feet": {"equip_sound": "item.armor.equip_generic", "unequip_sound": "item.armor.unequip_generic", "model": "asianmod:nephrite_boots"}
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "asianmod:nephrite"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "asianmod:nephrite"
+      }
+    ]
   }
 }

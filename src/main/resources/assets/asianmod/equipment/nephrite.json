@@ -1,37 +1,9 @@
 {
-  "slots": {
-    "head": {
-      "equip_sound": "item.armor.equip_generic",
-      "unequip_sound": "item.armor.unequip_generic",
-      "model": "asianmod:nephrite_helmet",
-      "layers": [
-        { "texture": "asianmod:item/nephrite" }
-      ]
-    },
-    "chest": {
-      "equip_sound": "item.armor.equip_generic",
-      "unequip_sound": "item.armor.unequip_generic",
-      "model": "asianmod:nephrite_chestplate",
-      "layers": [
-        { "texture": "asianmod:item/nephrite" }
-      ]
-    },
-    "legs": {
-      "equip_sound": "item.armor.equip_generic",
-      "unequip_sound": "item.armor.unequip_generic",
-      "model": "asianmod:nephrite_leggings",
-      "layers": [
-        { "texture": "asianmod:item/nephrite" }
-      ]
-    },
-    "feet": {
-      "equip_sound": "item.armor.equip_generic",
-      "unequip_sound": "item.armor.unequip_generic",
-      "model": "asianmod:nephrite_boots",
-      "layers": [
-        { "texture": "asianmod:item/nephrite" }
-      ]
-    }
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "asianmod:nephrite"
+      }
+    ]
   }
 }
-

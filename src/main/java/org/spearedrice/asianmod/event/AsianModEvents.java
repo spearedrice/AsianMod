@@ -19,7 +19,6 @@ public class AsianModEvents implements ModInitializer {
     public void onInitialize() {
 
         registerBlockEvents();
-        registerSheepEvents();
         registerDeathEvents();
     }
 
@@ -39,14 +38,7 @@ public class AsianModEvents implements ModInitializer {
         });
     }
 
-    private void registerSheepEvents() {
-        SheepShearCallback.EVENT.register((player, sheep) -> {
-            sheep.setSheared(true);
-
-            drop(player, new ItemStack(Items.EMERALD));
-            return InteractionResult.FAIL;
-        });
-    }
+    // Sheep shear events removed when SheepEntityMixin was deleted
 
     private void registerDeathEvents() {
         ServerLivingEntityEvents.AFTER_DEATH.register((entity, damageSource) -> {
