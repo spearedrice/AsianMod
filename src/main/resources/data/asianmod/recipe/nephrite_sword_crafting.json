@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "combat",
+  "pattern": ["#","#","X"],
+  "key": {"#": "asianmod:nephrite_jade", "X": "minecraft:stick"},
+  "result": {"id": "asianmod:nephrite_sword", "count": 1}
+}
+

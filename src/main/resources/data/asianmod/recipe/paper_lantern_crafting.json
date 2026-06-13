@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["#","#","#"],
+  "key": {"#": "minecraft:paper"},
+  "result": {"id": "asianmod:paper_lantern", "count": 1}
+}
+

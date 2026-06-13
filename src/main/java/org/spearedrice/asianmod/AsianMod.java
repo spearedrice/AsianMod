@@ -10,6 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.entity.MobCategory;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -19,6 +20,7 @@ import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 
 import org.spearedrice.asianmod.component.ModComponents;
 import org.spearedrice.asianmod.worldgen.AsianModWorldPlacedFeatures;
+import org.spearedrice.asianmod.entity.ModEntityTypes;
 
 public class AsianMod implements ModInitializer {
 	public static final String MOD_ID = "asianmod";
@@ -50,6 +52,14 @@ public class AsianMod implements ModInitializer {
 				GenerationStep.Decoration.VEGETAL_DECORATION,
 				AsianModWorldPlacedFeatures.PORCELAIN_TREE_PLACED_KEY
 		);
+
 		ComponentTooltipAppenderRegistry.addAfter(DataComponents.DAMAGE, ModComponents.COMPONENT_WITH_TOOLTIP);
+		BiomeModifications.addSpawn(
+				BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
+				MobCategory.MONSTER,
+				ModEntityTypes.ASIAN_DAD_ENTITY,
+				8, 1, 2
+		);
+
 	}
 }

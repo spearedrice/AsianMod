@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": ["###","# #","# #"],
+  "key": {"#": "asianmod:nephrite_jade"},
+  "result": {"id": "asianmod:nephrite_leggings", "count": 1}
+}
+

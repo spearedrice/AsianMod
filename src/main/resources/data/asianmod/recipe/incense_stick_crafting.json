@@ -1,0 +1,9 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["X","#"],
+  "key": {"#": "minecraft:stick", "X": "minecraft:bone_meal"},
+  "result": {"id": "asianmod:incense_stick", "count": 1}
+}
+

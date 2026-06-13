@@ -1,0 +1,9 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building_blocks",
+  "pattern": ["###","###","###"],
+  "key": {"#": "asianmod:porcelain"},
+  "result": {"id": "asianmod:porcelain_block", "count": 1}
+}
+

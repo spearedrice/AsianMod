@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "asianmod:raw_nephrite_jade",
+  "result": {"id": "asianmod:nephrite_jade"},
+  "experience": 0.7,
+  "cookingtime": 200
+}
+

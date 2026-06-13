@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["#X#","XYX","#X#"],
+  "key": {"#": "minecraft:stick", "X": "minecraft:string", "Y": "minecraft:stick"},
+  "result": {"id": "asianmod:abacus", "count": 1}
+}
+

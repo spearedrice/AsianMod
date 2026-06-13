@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["##","##"],
+  "key": {"#": "minecraft:string"},
+  "result": {"id": "asianmod:silk_gloves", "count": 1}
+}
+

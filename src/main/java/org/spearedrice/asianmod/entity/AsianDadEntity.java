@@ -64,7 +64,7 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 		double dz = target.getZ() - this.getZ();
 		double dist = Math.sqrt(dx * dx + dz * dz);
 		SlipperEntity slipper = new SlipperEntity(this.level(), this);
-		slipper.shoot(dx, dy + dist * 0.2, dz, 1.6F, 12.0F);
+		slipper.shoot(dx, dy + dist * 0.2, dz, 1.6F, 4.0F);
 		this.level().addFreshEntity(slipper);
 	}
 
@@ -108,10 +108,6 @@ public class AsianDadEntity extends PathfinderMob implements RangedAttackMob {
 		}
 	}
 
-	@Override
-	protected SoundEvent getAmbientSound() {
-		return CustomSounds.BELLOWS;
-	}
 
 	@Override
 	protected SoundEvent getHurtSound(DamageSource damageSource) {

@@ -118,10 +118,10 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 
 		translationBuilder.add("music.asianmod.red_sun", "Red Sun");
 
-		translationBuilder.add("sound.asianmod.bellows", "Bellows bellowing");
+		translationBuilder.add("subtitles.asianmod.bellows", "Bellows bellowing");
 
-		translationBuilder.add("sound.asianmod.wind_chime", "Wind chime chiming");
+		translationBuilder.add("subtitles.asianmod.wind_chime", "Wind chime chiming");
 
-		translationBuilder.add("sound.asianmod.slipper_thrown", "Slipper being thrown at player");
+		translationBuilder.add("subtitles.asianmod.slipper_thrown", "Slipper being thrown at player");
 	}
 }

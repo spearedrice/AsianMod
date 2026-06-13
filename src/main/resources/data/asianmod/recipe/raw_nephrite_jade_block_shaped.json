@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building_blocks",
+  "pattern": ["###","###","###"],
+  "key": {"#": "asianmod:raw_nephrite_jade"},
+  "result": {"id": "asianmod:raw_nephrite_jade_block", "count": 1}
+}
+

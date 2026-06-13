@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [" X ","#Y#"," # "],
+  "key": {"#": "asianmod:paper_lantern", "X": "minecraft:feather", "Y": "minecraft:string"},
+  "result": {"id": "asianmod:sky_lantern", "count": 1}
+}
+

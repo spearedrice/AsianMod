@@ -1,0 +1,9 @@
+
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "tools",
+  "pattern": ["##"," #"," X"],
+  "key": {"#": "asianmod:nephrite_jade", "X": "minecraft:stick"},
+  "result": {"id": "asianmod:nephrite_axe", "count": 1}
+}
+

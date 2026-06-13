@@ -17,7 +17,7 @@ import org.spearedrice.asianmod.AsianMod;
 public class ModEntityTypes {
 	public static final EntityType<AsianDadEntity> ASIAN_DAD_ENTITY = register(
 			"asian_dad",
-			EntityType.Builder.<AsianDadEntity>of(AsianDadEntity::new, MobCategory.MISC)
+			EntityType.Builder.<AsianDadEntity>of(AsianDadEntity::new, MobCategory.MONSTER)
 					.sized(0.75f, 1.75f)
 	);
 

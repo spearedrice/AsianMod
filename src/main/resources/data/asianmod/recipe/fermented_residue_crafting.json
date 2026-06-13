@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wheat",
+    "minecraft:sugar",
+    "minecraft:glass_bottle"
+  ],
+  "result": {"id": "asianmod:fermented_residue", "count": 1}
+}
+

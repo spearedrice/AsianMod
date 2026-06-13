@@ -11,6 +11,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.item.ItemStack;
 import org.spearedrice.asianmod.item.ModItems;
+import org.spearedrice.asianmod.sound.CustomSounds;
+import net.minecraft.sounds.SoundSource;
 
 public class SlipperEntity extends ThrowableProjectile implements ItemSupplier {
 	public SlipperEntity(EntityType<? extends ThrowableProjectile> type, Level level) {
@@ -29,6 +31,7 @@ public class SlipperEntity extends ThrowableProjectile implements ItemSupplier {
 			Entity target = entityHit.getEntity();
 			Entity owner = this.getOwner();
 			target.hurt(this.level().damageSources().thrown(this, owner instanceof LivingEntity le ? le : null), 4.0F);
+			this.level().playSound(null, this.getX(), this.getY(), this.getZ(), CustomSounds.SLIPPER_THROWN, SoundSource.NEUTRAL, 1.0F, 1.0F);
 			this.discard();
 		}
 	}

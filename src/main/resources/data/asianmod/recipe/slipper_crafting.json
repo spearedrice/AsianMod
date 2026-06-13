@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": ["#  ","###"],
+  "key": {"#": "minecraft:leather"},
+  "result": {"id": "asianmod:slipper", "count": 1}
+}
+

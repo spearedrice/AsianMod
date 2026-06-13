@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building_blocks",
+  "pattern": ["###","###","###"],
+  "key": {"#": "minecraft:iron_ingot"},
+  "result": {"id": "asianmod:steel_block", "count": 1}
+}
+

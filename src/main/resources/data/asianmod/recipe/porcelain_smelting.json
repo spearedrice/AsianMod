@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "asianmod:porcelain_ore",
+  "result": {"id": "asianmod:porcelain"},
+  "experience": 0.3,
+  "cookingtime": 200
+}
+
