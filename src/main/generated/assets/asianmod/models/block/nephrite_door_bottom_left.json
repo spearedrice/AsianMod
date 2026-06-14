@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_left",
-  "textures": {
-    "bottom": "asianmod:block/nephrite_door_bottom",
-    "top": "asianmod:block/nephrite_door_top"
-  }
-}

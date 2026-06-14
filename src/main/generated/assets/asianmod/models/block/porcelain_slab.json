@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "asianmod:block/porcelain_block",
-    "side": "asianmod:block/porcelain_block",
-    "top": "asianmod:block/porcelain_block"
-  }
-}

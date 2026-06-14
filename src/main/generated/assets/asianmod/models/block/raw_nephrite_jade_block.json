@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "asianmod:block/raw_nephrite_jade_block"
-  }
-}
