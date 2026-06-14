@@ -34,7 +34,6 @@
 		"org.spearedrice.asianmod.AsianModBlockEntityRenderer",
 		"org.spearedrice.asianmod.AsianModDynamicSound",
 		"org.spearedrice.asianmod.AsianModScreens",
-		"org.spearedrice.asianmod.rendering.TuffRenderPipeline",
 		"org.spearedrice.asianmod.rendering.HudRenderingEntrypoint",
 		"org.spearedrice.asianmod.rendering.RenderingConceptsEntrypoint",
 		"org.spearedrice.asianmod.network.basic.AsianModNetworkingBasicClient",
