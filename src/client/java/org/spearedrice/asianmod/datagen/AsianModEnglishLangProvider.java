@@ -126,6 +126,6 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 
 		translationBuilder.add("subtitles.asianmod.slipper_hit", "Slipper hits");
 
-		translationBuilder.add("subtitles.asianmod.red_sun", "China respect");
+		translationBuilder.add("subtitles.asianmod.music/red_sun", "China respect");
 	}
 }
