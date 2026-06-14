@@ -45,7 +45,7 @@ public class AsianModWorldPlacedFeatures {
 
 
 		List<PlacementModifier> porcelainOreModifiers = List.of(
-				CountPlacement.of(6),
+				CountPlacement.of(12),
 					BiomeFilter.biome(),
 					InSquarePlacement.spread(),
 				HeightRangePlacement.of(BiasedToBottomHeight.of(VerticalAnchor.BOTTOM, VerticalAnchor.absolute(-32), 3))
@@ -53,7 +53,7 @@ public class AsianModWorldPlacedFeatures {
 
 
 		List<PlacementModifier> nephriteOreModifiers = List.of(
-				CountPlacement.of(6),
+				CountPlacement.of(12),
 					BiomeFilter.biome(),
 					InSquarePlacement.spread(),
 				HeightRangePlacement.of(BiasedToBottomHeight.of(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(0), 3))

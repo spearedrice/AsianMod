@@ -63,7 +63,7 @@ public class AsianModWorldConfiguredFeatures {
 				PORCELAIN_ORE_CONFIGURED_KEY,
 				new ConfiguredFeature<>(
 						Feature.ORE,
-						new OreConfiguration(porcelainOreConfig, 8)
+						new OreConfiguration(porcelainOreConfig, 12)
 				)
 		);
 
@@ -71,7 +71,7 @@ public class AsianModWorldConfiguredFeatures {
 				NEPHRITE_JADE_ORE_CONFIGURED_KEY,
 				new ConfiguredFeature<>(
 						Feature.ORE,
-						new OreConfiguration(nephriteOreConfig, 8)
+						new OreConfiguration(nephriteOreConfig, 12)
 				)
 		);
 
