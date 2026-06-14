@@ -252,7 +252,7 @@ public class AsianModRecipeProvider extends FabricRecipeProvider {
 
                 shaped(RecipeCategory.MISC, ModItems.SLIPPER)
                         .pattern("# #")
-                        .pattern("##")
+                        .pattern("## ")
                         .define('#', Items.LEATHER)
                         .unlockedBy(getHasName(Items.LEATHER), has(Items.LEATHER))
                         .save(exporter);
