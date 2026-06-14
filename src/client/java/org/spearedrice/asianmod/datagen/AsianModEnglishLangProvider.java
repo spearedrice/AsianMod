@@ -125,7 +125,5 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("sound.asianmod.slipper_thrown", "Slipper thrown");
 
 		translationBuilder.add("sound.asianmod.slipper_hit", "Slipper hits");
-
-		translationBuilder.add("music.asianmod.red_sun", "China respect");
 	}
 }
