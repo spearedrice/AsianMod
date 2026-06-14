@@ -21,6 +21,7 @@ import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import org.spearedrice.asianmod.component.ModComponents;
 import org.spearedrice.asianmod.worldgen.AsianModWorldPlacedFeatures;
 import org.spearedrice.asianmod.entity.ModEntityTypes;
+import org.spearedrice.asianmod.advancement.ModCriteria;
 
 public class AsianMod implements ModInitializer {
 	public static final String MOD_ID = "asianmod";
@@ -54,6 +55,7 @@ public class AsianMod implements ModInitializer {
 		);
 
 		ComponentTooltipAppenderRegistry.addAfter(DataComponents.DAMAGE, ModComponents.COMPONENT_WITH_TOOLTIP);
+		ModCriteria.register();
 		BiomeModifications.addSpawn(
 				BiomeSelectors.tag(BiomeTags.IS_OVERWORLD),
 				MobCategory.MONSTER,
