@@ -57,7 +57,7 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModItems.PAPER_LANTERN, "Paper Lantern");
 		translationBuilder.add(ModItems.FLYING_NEEDLE, "Flying Needle");
 		translationBuilder.add(ModItems.MERCURY_BUCKET, "Mercury Bucket");
-		translationBuilder.add(ModItems.CUSTOM_SOUND_ITEM, "Custom Sound Item");
+		translationBuilder.add(ModItems.RICE_WINE_BUCKET, "Rice Wine Bucket");
 
 		translationBuilder.add(
 				Util.makeDescriptionId("effect",
@@ -82,7 +82,6 @@ public class AsianModEnglishLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModBlocks.BRASS_CHEST, "Brass Chest");
 		translationBuilder.add(ModBlocks.BELLOWS_BLOCK, "Bellows Block");
 		translationBuilder.add(ModBlocks.OIL_LAMP, "Oil Lamp");
-		translationBuilder.add(ModBlocks.DUPLICATOR_BLOCK, "Duplicator");
 
 		translationBuilder.add(ModBlocks.PORCELAIN_BLOCK, "Porcelain Block");
 		translationBuilder.add(ModBlocks.PORCELAIN_STAIRS, "Porcelain Stairs");

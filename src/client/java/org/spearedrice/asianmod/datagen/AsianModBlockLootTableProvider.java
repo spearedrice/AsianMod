@@ -61,7 +61,6 @@ public class AsianModBlockLootTableProvider extends FabricBlockLootTableProvider
         dropSelf(ModBlocks.VERTICAL_BAMBOO_SLAB);
         dropSelf(ModBlocks.LINGZHI);
         dropSelf(ModBlocks.STEEL_BLOCK);
-        dropSelf(ModBlocks.DUPLICATOR_BLOCK);
         add(ModBlocks.SKY_LANTERN_BLOCK, block -> createSingleItemTable(ModItems.SKY_LANTERN));
 
 

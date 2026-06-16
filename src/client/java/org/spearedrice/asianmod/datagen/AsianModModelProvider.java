@@ -62,7 +62,6 @@ public class AsianModModelProvider extends FabricModelProvider {
 		gen.registerSimpleItemModel(ModBlocks.OIL_LAMP, oilLampModel);
 
 		gen.createTrivialCube(ModBlocks.LINGZHI);
-		gen.createTrivialCube(ModBlocks.DUPLICATOR_BLOCK);
 		gen.createTrivialCube(ModBlocks.VERTICAL_BAMBOO_SLAB);
 
 		gen.createTrivialCube(ModBlocks.NEPHRITE_BLOCK);
@@ -124,7 +123,6 @@ public class AsianModModelProvider extends FabricModelProvider {
 		);
 		gen.generateFlatItem(ModItems.FUGU, ModelTemplates.FLAT_ITEM);
 		gen.generateFlatItem(ModItems.MERCURY_BUCKET, ModelTemplates.FLAT_ITEM);
-		gen.generateFlatItem(ModItems.CUSTOM_SOUND_ITEM, ModelTemplates.FLAT_ITEM);
 		ItemModel.Unbaked pearlOverworld = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.DRAGON_PEARL, "_overworld", ModelTemplates.FLAT_ITEM));
 		ItemModel.Unbaked pearlNether = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.DRAGON_PEARL, "_nether", ModelTemplates.FLAT_ITEM));
 		ItemModel.Unbaked pearlEnd = ItemModelUtils.plainModel(gen.createFlatItemModel(ModItems.DRAGON_PEARL, "_end", ModelTemplates.FLAT_ITEM));

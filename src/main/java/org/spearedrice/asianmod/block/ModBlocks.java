@@ -149,10 +149,6 @@ public class ModBlocks {
 			"nephrite_door", settings -> new DoorBlock(BlockSetType.STONE, settings), BlockBehaviour.Properties.of(), true
 	);
 
-	public static final Block DUPLICATOR_BLOCK = register(
-			"duplicator", DuplicatorBlock::new, BlockBehaviour.Properties.of(), true
-	);
-
 	public static final Block STEEL_BLOCK = register(
 			"steel_block",
 			Block::new,

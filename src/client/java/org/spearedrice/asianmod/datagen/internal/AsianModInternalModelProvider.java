@@ -13,7 +13,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 
 import org.spearedrice.asianmod.block.ModBlocks;
 import org.spearedrice.asianmod.block.custom.OilLampBlock;
-import org.spearedrice.asianmod.block.custom.DuplicatorBlock;
 import org.spearedrice.asianmod.block.custom.AbacusBlock;
 import org.spearedrice.asianmod.item.ModItems;
 
@@ -32,7 +31,6 @@ public class AsianModInternalModelProvider extends FabricModelProvider {
 
 
         gen.createSimpleBlock(ModBlocks.ABACUS_BLOCK, BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.ABACUS_BLOCK)));
-        gen.createSimpleBlock(ModBlocks.DUPLICATOR_BLOCK, BlockModelGenerators.plainVariant(ModelLocationUtils.getModelLocation(ModBlocks.DUPLICATOR_BLOCK)));
 
 
         gen.blockStateOutput.accept(

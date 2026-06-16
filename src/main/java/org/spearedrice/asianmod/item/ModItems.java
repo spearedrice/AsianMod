@@ -107,7 +107,6 @@ public class ModItems {
 					.craftRemainder(net.minecraft.world.item.Items.BUCKET)
 					.stacksTo(1)
 	);
-	public static final Item CUSTOM_SOUND_ITEM = register("custom_sound_item", Item::new, new Item.Properties());
 
 
 	public static final ResourceKey<CreativeModeTab> CUSTOM_CREATIVE_TAB_KEY = ResourceKey.create(
@@ -134,7 +133,6 @@ public class ModItems {
 			output.accept(ModItems.PAPER_LANTERN);
 			output.accept(ModItems.FLYING_NEEDLE);
 			output.accept(ModItems.FUGU);
-				output.accept(ModItems.CUSTOM_SOUND_ITEM);
 				output.accept(ModItems.NEPHRITE_AXE);
 				output.accept(ModItems.NEPHRITE_HOE);
 			})
