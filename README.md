@@ -1,5 +1,5 @@
 ---
-
+*ignore these lines*
 # asianmod
 
 ![son](https://raw.githubusercontent.com/spearedrice/AsianMod/refs/heads/master/thumb.png)
