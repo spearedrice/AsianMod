@@ -5,7 +5,6 @@
 
 a fabric expansion mod that adds traditional building materials, unique items, and some very specific survival challenges to your game.
 
----
 
 ## how to install
 
@@ -14,7 +13,7 @@ a fabric expansion mod that adds traditional building materials, unique items, a
 * **multiplayer:** must be installed on both server and client or things will break.
 * **singleplayer:** just drop it in your mods folder.
 
----
+
 
 ## what’s in the mod
 
@@ -28,7 +27,7 @@ a fabric expansion mod that adds traditional building materials, unique items, a
     * thundering
     * curse of repulsion
     * they don't work
----
+
 
 ### mobs & items
 
@@ -38,7 +37,7 @@ a fabric expansion mod that adds traditional building materials, unique items, a
 * **fugu:** food item that might poison you.
 * **lanterns:** sky lanterns and paper lanterns you can place or release.
 
----
+
 
 ### blocks & building
 
@@ -52,7 +51,7 @@ a fabric expansion mod that adds traditional building materials, unique items, a
     * abacus (functional decorative block)
 * **nephrite door:** heavy stone-tier door.
 
----
+
 
 ## project status & maintenance
 
@@ -60,4 +59,4 @@ a fabric expansion mod that adds traditional building materials, unique items, a
 * **known issues:** this was originally a joke project, so some stuff might be broken.
 * **future updates:** mostly finished and not actively maintained. anyone can port or update it for newer minecraft versions. pull requests fixing bugs are welcome.
 
----
+
