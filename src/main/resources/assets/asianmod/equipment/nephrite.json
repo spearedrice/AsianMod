@@ -4,6 +4,11 @@
       {
         "texture": "asianmod:nephrite"
       }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "asianmod:nephrite"
+      }
     ]
   }
 }
