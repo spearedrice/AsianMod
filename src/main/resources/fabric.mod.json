@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "asianmod",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"name": "Asian Mod",
 	"icon": "assets/asianmod/icon.png",
 	"environment": "*",
